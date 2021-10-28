@@ -1,4 +1,4 @@
-package com.dh10.dh10_web;
+package com.dh10.dh10_web.oldclass;
 
 
 import org.springframework.stereotype.Controller;

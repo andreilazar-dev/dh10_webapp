@@ -1,4 +1,4 @@
-package com.dh10.dh10_web;
+package com.dh10.dh10_web.oldclass;
 
 import com.dh10.stringchecker.CountryChecker;
 import com.dh10.stringchecker.StringChecker;
