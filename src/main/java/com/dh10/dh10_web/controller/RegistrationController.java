@@ -33,6 +33,8 @@ public class RegistrationController {
         //call user register when i implement it
 
         //Pagina di Mockup da cambiare succesivamente
+    	
+    	
         return new ModelAndView("welcome", "firstname", user.getFirstname());
     }
 }
