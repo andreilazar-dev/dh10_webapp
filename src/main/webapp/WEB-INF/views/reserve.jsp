@@ -10,5 +10,17 @@
 	<font color="green"><h1>Hello ${userName}</h1></font>
 	<h2></h2> You have successfully logged in.
 	<font color="green"><h1>Welcome in Private Area</h1></font>
+
+	<form method="post" action = "reserve">
+		<div align="center">
+				<%-- <form:errors path="*" cssClass="error" /> --%>
+			<table>
+				<tr>
+					<td colspan="2"><input type="submit" value="Logout"/></td>
+				</tr>
+			</table>
+		</div>
+	</form>
+
 </body>
 </html>

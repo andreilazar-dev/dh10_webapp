@@ -27,8 +27,12 @@ public class RegistrationController {
     public ModelAndView addUser(HttpServletRequest request, HttpServletResponse response,
                                 @ModelAttribute("user") UserBean user) {
 
+        //TODO: fare tutta la gestione di controllo e segnalazione errore dei parametri
+        //TODO: chiamare un service per corregere la stringa Country e salvarla standardizzata nel Db
+
         //call user register when i implement it
 
+        //Pagina di Mockup da cambiare succesivamente
         return new ModelAndView("welcome", "firstname", user.getFirstname());
     }
 }

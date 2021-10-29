@@ -41,7 +41,7 @@
         <tr></tr>
         <tr>
             <td></td>
-            <td><a href="../../home.jsp">Home</a></td>
+            <td><a href="/dh10_web_war_exploded">Home</a></td>
         </tr>
     </table>
 </form:form>

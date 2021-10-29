@@ -13,14 +13,17 @@
 
     <!-- Enables the Spring MVC @Controller programming model -->
     <mvc:annotation-driven />
-
     <context:component-scan
-            base-package="com.dh10.dh10_web.controller" />
+            base-package="com.dh10.dh10_web" />
     <mvc:default-servlet-handler />
 
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/views/" />
         <property name="suffix" value=".jsp" />
+    </bean>
+
+    <bean class="org.springframework.web.servlet.view.ResourceBundleViewResolver">
+        <property name="basename" value="views" />
     </bean>
 
 </beans>

@@ -12,27 +12,29 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Spring Login Form</title>
+    <title>Login Form</title>
 </head>
 <body>
-<form:form name="submitForm" method="POST">
+<h2><spring:message code="lg.page" text="New Login" /></h2>
+<br/>
+<form:form method="post" modelAttribute="loginBean">
     <div align="center">
+            <%-- <form:errors path="*" cssClass="error" /> --%>
         <table>
             <tr>
-                <td>User Name</td>
-                <td><input type="text" name="userName" /></td>
+                <td><spring:message code="lg.User" text="UserName" /></td>
+                <td><form:input path="userName" /></td>
+                <td><form:errors path="userName" cssClass="error" /></td>
             </tr>
             <tr>
-                <td>Password</td>
-                <td><input type="password" name="password" /></td>
+                <td><spring:message code="lg.Password" text="Password" /></td>
+                <td><form:input path="password" /></td>
+                <td><form:errors path="password" cssClass="error" /></td>
             </tr>
             <tr>
-                <td></td>
-                <td><input type="submit" value="Submit" /></td>
+                <td colspan="2"><input type="submit" value="Login"/></td>
             </tr>
         </table>
-        <div style="color: red">${error}</div>
-
     </div>
 </form:form>
 </body>
