@@ -7,8 +7,8 @@
 <title>Success Form</title>
 </head>
 <body>
-	<font color="green"><h1>Hello</h1></font>
-	<h2>${msg}</h2> You have successfully logged in.
-	<font color="green"><h1>Welcome to Spring world !</h1></font>
+	<font color="green"><h1>Hello ${userName}</h1></font>
+	<h2></h2> You have successfully logged in.
+	<font color="green"><h1>Welcome in Private Area</h1></font>
 </body>
 </html>
