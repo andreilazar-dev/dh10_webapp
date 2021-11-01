@@ -27,7 +27,7 @@ public class CountryController {
 	      model.addAttribute("message", "Hello Spring MVC Framework!");
 	      
 	      StringChecker countrycheck = new CountryChecker();
-	       if(countrycheck.find_standard(country))
+	       if(countrycheck.find_standard(country)!=null)
 	            model.addAttribute("mex" , "Nazione Trovata");
 	       model.addAttribute("mex" , "Nazione non Trovata");
 	        

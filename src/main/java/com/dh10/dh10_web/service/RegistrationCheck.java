@@ -7,7 +7,7 @@ import com.dh10.stringchecker.StringChecker;
 public class RegistrationCheck {
 	
 
-	public boolean FirstNameCheck(UserBean user) {
+	public boolean firstNameCheck(UserBean user) {
 			
 			String s = user.getFirstname();
 			if(s.length()>30)
@@ -16,7 +16,7 @@ public class RegistrationCheck {
 			return true;
 	}
 			
-	public boolean SecondNameCheck(UserBean user) {
+	public boolean secondNameCheck(UserBean user) {
 			String s = user.getLastname();
 			if(s.length()>30)
 				return false;
@@ -25,10 +25,10 @@ public class RegistrationCheck {
 			
 	}
 	
-	public boolean UserCheck(UserBean user) {
+	public boolean userCheck(UserBean user) {
 		String s = user.getUsername();
 		
-		//interrogare DB per vedere se ho gia username uguale
+		//TODO:interrogare DB per vedere se ho gia username uguale
 		
 		if(s.length()>30)
 			return false;
@@ -37,23 +37,20 @@ public class RegistrationCheck {
 		
 	}
 	
-	public boolean PasswordCheck(UserBean user) {
+	public boolean passwordCheck(UserBean user) {
 		String s = user.getPassword();
 		if (s.matches("((?=.*[0-9])(?=.*[a-zA-Z]).{8,20})"))
 			return true;
 		return false;
 	}
 	
-	public String CountryCheck(UserBean user) {
+	public String countryCheck(UserBean user) {
 		String s = user.getCountry();
 		
 		StringChecker countrycheck = new CountryChecker();
 		
-		//aggiungere metodo per tornare la stringa normalizzata
-		
-		return s;
-		
-	
+		//la stringa è valida se è diversa da null
+		return countrycheck.find_standard(s);
 	}
 	
 	
