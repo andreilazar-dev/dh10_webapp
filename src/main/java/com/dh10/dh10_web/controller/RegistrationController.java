@@ -1,6 +1,7 @@
 package com.dh10.dh10_web.controller;
 
 
+import com.dh10.access.model.beans.User;
 import com.dh10.dh10_web.model.UserBean;
 import com.dh10.dh10_web.service.RegistrationCheck;
 
@@ -18,31 +19,38 @@ import javax.servlet.http.HttpServletResponse;
 public class RegistrationController {
 
 
-    @RequestMapping(value = "/register", method = RequestMethod.GET)
-    public ModelAndView showRegister() {
-        ModelAndView mav = new ModelAndView("register");
-        mav.addObject("user", new UserBean());
+	  @RequestMapping(value = "/register", method = RequestMethod.GET)
+	    public ModelAndView showRegister() {
+	        ModelAndView mav = new ModelAndView("register");
+	        mav.addObject("user", new User());
 
-        return mav;
-    }
+	        return mav;
+	    }
 
     @RequestMapping(value = "/registerProcess", method = RequestMethod.POST)
-    public ModelAndView addUser( @ModelAttribute("user") UserBean user, Model model) {
+    public String addUser( @ModelAttribute("user") User user, Model model) {
     	
     	RegistrationCheck r = new RegistrationCheck();
-    	r.firstNameCheck(user);
+    	
+    	if(!r.firstNameCheck(user.getFirstName()) || !r.passwordCheck(user.getPassword()) || !r.lastNameCheck(user.getLastName()) || !r.userCheck(user.getUserId()))
+    		return "error";
+    	/*
+    	 if(r.countryCheck(user.getCountry()) == null)
+    		return "error"; 
+    	*/
+    	
+    	
+    	r.saveRegistration(user);
+    	return "reserve";
     	
     	
     	
-
-        //TODO: fare tutta la gestione di controllo e segnalazione errore dei parametri
-        //TODO: chiamare un service per corregere la stringa Country e salvarla standardizzata nel Db
-
-        //call user register when i implement it
-
-        //Pagina di Mockup da cambiare succesivamente
+    	
+    
+    
+    	//call addUser when implemented
     	
     	
-        return new ModelAndView("welcome", "firstname", user.getFirstname());
+        //return new ModelAndView("welcome", "firstname", user.getFirstname());
     }
 }

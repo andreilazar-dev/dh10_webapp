@@ -1,10 +1,4 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Andrei Lazar
-  Date: 28/10/2021
-  Time: 13:37
-  To change this template use File | Settings | File Templates.
---%>
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%> <%@taglib
         uri="http://www.springframework.org/tags/form" prefix="form"%>
@@ -12,30 +6,49 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  
     <title>Login Form</title>
 </head>
 <body>
 <h2><spring:message code="lg.page" text="New Login" /></h2>
 <br/>
+
+<div class="jumbotron">
+    <h1>Login:</h1>      
+    <p>Please enter your credentials</p>
+ </div>
+ 
+<div class= "container">
 <form:form method="post" modelAttribute="loginBean">
-    <div align="center">
-            <%-- <form:errors path="*" cssClass="error" /> --%>
-        <table>
-            <tr>
-                <td><spring:message code="lg.User" text="UserName" /></td>
-                <td><form:input path="userName" /></td>
-                <td><form:errors path="userName" cssClass="error" /></td>
-            </tr>
-            <tr>
-                <td><spring:message code="lg.Password" text="Password" /></td>
-                <td><form:input path="password" /></td>
-                <td><form:errors path="password" cssClass="error" /></td>
-            </tr>
-            <tr>
-                <td colspan="2"><input type="submit" value="Login"/></td>
-            </tr>
-        </table>
+            
+       
+         	 <div class="form-group">
+  			 <form:label path="userName">Username:</form:label>
+             <spring:message code="lg.User" text="UserName" />  
+                <form:input path="userName" class="form-control"  placeholder="Enter username" />
+               <form:errors path="userName" cssClass="error" />
+          </div>
+           <div class="form-group">
+            <form:label path="password">Password:</form:label>
+              <spring:message code="lg.Password" text="Password" />  
+               <form:input path="password" class="form-control" placeholder="Enter password" />
+               <form:errors path="password" cssClass="error" />
+          </div>
+         
+         <div class="form-group">
+                <input type="submit" value="Login" class="btn btn-primary"/>
+                
+         <div class="form-group">
+               <p><a href="register">new user? go to registration page!</a></p>
+         </div>
     </div>
 </form:form>
+</div>
+
 </body>
 </html>
