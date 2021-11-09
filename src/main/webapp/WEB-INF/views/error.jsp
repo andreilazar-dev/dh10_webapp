@@ -7,7 +7,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>MESSAGGIO:</h1>
-	<p>$mex</p>
+
+<p> campi errati, riprova!</p>
+<p>
+	<a href="register">riprova</a>
+</p>
+
 </body>
 </html>
