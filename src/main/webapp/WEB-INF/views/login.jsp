@@ -28,10 +28,10 @@
             
        
          	 <div class="form-group">
-  			 <form:label path="userName">Username:</form:label>
+  			 <form:label path="userId">Username:</form:label>
              <spring:message code="lg.User" text="UserName" />  
-                <form:input path="userName" class="form-control"  placeholder="Enter username" />
-               <form:errors path="userName" cssClass="error" />
+                <form:input path="userId" class="form-control"  placeholder="Enter username" />
+               <form:errors path="userId" cssClass="error" />
           </div>
            <div class="form-group">
             <form:label path="password">Password:</form:label>

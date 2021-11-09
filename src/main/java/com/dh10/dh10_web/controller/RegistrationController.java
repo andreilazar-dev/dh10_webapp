@@ -2,8 +2,8 @@ package com.dh10.dh10_web.controller;
 
 
 import com.dh10.access.model.beans.User;
-import com.dh10.dh10_web.model.UserBean;
-import com.dh10.dh10_web.service.RegistrationCheck;
+import com.dh10.dh10_web.service.Registration;
+
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -30,7 +30,7 @@ public class RegistrationController {
     @RequestMapping(value = "/registerProcess", method = RequestMethod.POST)
     public String addUser( @ModelAttribute("user") User user, Model model) {
     	
-    	RegistrationCheck r = new RegistrationCheck();
+    	Registration r = new Registration();
     	
     	if(!r.firstNameCheck(user.getFirstName()) || !r.passwordCheck(user.getPassword()) || !r.lastNameCheck(user.getLastName()) || !r.userCheck(user.getUserId()))
     		return "error";

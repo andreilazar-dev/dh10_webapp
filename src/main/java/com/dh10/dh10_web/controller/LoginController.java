@@ -22,12 +22,12 @@ public class LoginController {
 
     @RequestMapping(method = RequestMethod.POST )
     public String submit(@ModelAttribute("loginBean") LoginBean loginBean, BindingResult result,Model model) {
-        if (loginBean != null && loginBean.getUserName() != null & loginBean.getPassword() != null) {
+        if (loginBean != null && loginBean.getUserId() != null & loginBean.getPassword() != null) {
             //TODO : mettere il dao per restituire il check del login
             //TODO : gestire le caselle di errore
             //TODO : Optionale inserire una figura admin che viene reindirizzata a una pagina apposita 
-            if (loginBean.getUserName().equals("root") && loginBean.getPassword().equals("root")) {
-                model.addAttribute("userName",loginBean.getUserName());
+            if (loginBean.getUserId().equals("root") && loginBean.getPassword().equals("root")) {
+                model.addAttribute("userName",loginBean.getUserId());
                 return "redirect:/reserve";
             } else {
                 result.reject("Invalid Details");
