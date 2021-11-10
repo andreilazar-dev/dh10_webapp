@@ -24,18 +24,19 @@ public class LoginController {
     public String submit(@ModelAttribute("loginBean") LoginBean loginBean, BindingResult result,Model model) {
         if (loginBean != null && loginBean.getUserId() != null & loginBean.getPassword() != null) {
             //TODO : mettere il dao per restituire il check del login
-            //TODO : gestire le caselle di errore
-            //TODO : Optionale inserire una figura admin che viene reindirizzata a una pagina apposita 
             if (loginBean.getUserId().equals("root") && loginBean.getPassword().equals("root")) {
                 model.addAttribute("userName",loginBean.getUserId());
                 return "redirect:/reserve";
-            } else {
-                result.reject("Invalid Details");
-                return "login";
+            } 
+            //andrà modificata è solo una prova
+            if (loginBean.getUserId().equals("a") && loginBean.getPassword().equals("a")) {
+                model.addAttribute("userName",loginBean.getUserId());
+                return "home";
+            }else {
+                return "error";
             }
         } else {
-            result.reject("Please enter Details");
-            return "login";
+            return "error";
         }
     }
 }

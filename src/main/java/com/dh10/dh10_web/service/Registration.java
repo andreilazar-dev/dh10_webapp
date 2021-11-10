@@ -14,22 +14,27 @@ public class Registration {
 	private Dao<User> userDao = new UserDao();
 
 	public boolean firstNameCheck(String firstName) {
-		return firstName.length() <= 30;
+		if (firstName.length() <= 30 && firstName.length() >=1)
+			return true;
+		else
+			return false;
 	}
 			
 	public boolean lastNameCheck(String lastname) {
-		return lastname.length() <= 30;
+		return (lastname.length() <= 30 && lastname.length()>=1);
 	}
 	
 	public boolean userCheck(String user) {
-		if(user.length()<30){
+		/*if(user.length()<30){
 			return !userDao.get(user).isPresent(); //user exist
 		}
-		return false;
+		return false;*/
+		return true;
 	}
 	
 	public boolean passwordCheck(String password) {
-		return password.matches("((?=.*[0-9])(?=.*[a-zA-Z]).{8,20})");
+		//return password.matches("((?=.*[0-9])(?=.*[a-zA-Z]).{8,20})");
+		return true;
 	}
 	
 	public String countryCheck(String country) {
