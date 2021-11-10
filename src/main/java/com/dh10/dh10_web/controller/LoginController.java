@@ -28,24 +28,11 @@ public class LoginController {
 
         if(result.hasErrors()){
             return "login";
-        }else{
-            model.addAttribute("userName",loginBean.getUserId());
+        }else {
+            //If user and password is correct
+            //Save id in session
+            model.addAttribute("userName", loginBean.getUserId());
             return "redirect:/reserve";
-        //if (loginBean != null && loginBean.getUserId() != null & loginBean.getPassword() != null) {
-            //TODO : mettere il dao per restituire il check del login
-          //  if (loginBean.getUserId().equals("root") && loginBean.getPassword().equals("root")) {
-            //    model.addAttribute("userName",loginBean.getUserId());
-              //  return "redirect:/reserve";
-           // } 
-            //andrà modificata è solo una prova
-            //if (loginBean.getUserId().equals("a") && loginBean.getPassword().equals("a")) {
-                //model.addAttribute("userName",loginBean.getUserId());
-              //  return "home";
-            //}else {
-              //  return "error";
-            //}
-        //} else {
-          //  return "error";
-        //}
+        }
     }
 }

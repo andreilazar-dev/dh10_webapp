@@ -27,6 +27,7 @@
      
             <form:label path="userId">Username:</form:label>
             <form:input path="userId" name="userId" id="userId" class="form-control" placeholder="Enter username"  required='true' />
+            <form:errors path="userId" cssClass="error" />
              <div class="invalid-feedback">Please fill out this field.</div>
   </div>
    <div class="form-group">     
@@ -50,8 +51,9 @@
      </div>
      <div class="form-group">
         
-           <form:label path="Country">Country:</form:label>
-            <form:input path="Country" name="Country" id="Country" class="form-control" placeholder="Enter country" required='true'/>
+           <form:label path="country">Country:</form:label>
+            <form:input path="country" name="country" id="country" class="form-control" placeholder="Enter country" required='true'/>
+            <form:errors path="country" cssClass="error" />
              <div class="invalid-feedback">Please fill out this field.</div>
      </div>
      <div class="form-group">

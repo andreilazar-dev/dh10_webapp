@@ -1,6 +1,9 @@
 package com.dh10.dh10_web.validator;
 
 import com.dh10.access.model.beans.User;
+import com.dh10.dh10_web.model.LoginBean;
+import com.dh10.dh10_web.service.LoginCheck;
+import com.dh10.dh10_web.service.Registration;
 import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
@@ -15,15 +18,15 @@ public class RegistrationValidator implements Validator {
 
     @Override
     public void validate(Object o, Errors errors) {
-        ValidationUtils.rejectIfEmptyOrWhitespace(errors,
-                "userId", "required.username","Field Username is required.");
-        ValidationUtils.rejectIfEmptyOrWhitespace(errors,
-                "password", "required.username","Field password is required.");
-        ValidationUtils.rejectIfEmptyOrWhitespace(errors,
-                "firstName", "required.username","Field firstName is required.");
-        ValidationUtils.rejectIfEmptyOrWhitespace(errors,
-                "lastName", "required.username","Field lastName is required.");
-        ValidationUtils.rejectIfEmptyOrWhitespace(errors,
-                "Country", "required.username","Field Country is required.");
+
+        User user = (User) o;
+        Registration registration = new Registration();
+
+        if(registration.userCheck(user.getUserId())){
+            errors.rejectValue("userId", "userId.exist");
+        }
+        if(registration.countryCheck(user.getCountry()) == null){
+            errors.rejectValue("country", "country.notFind");
+        }
     }
 }

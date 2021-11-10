@@ -25,11 +25,10 @@ public class Registration {
 	}
 	
 	public boolean userCheck(String user) {
-		/*if(user.length()<30){
-			return !userDao.get(user).isPresent(); //user exist
+		if(user.length()<30){
+			return userDao.get(user) != null; //user exist
 		}
-		return false;*/
-		return true;
+		return false;
 	}
 	
 	public boolean passwordCheck(String password) {

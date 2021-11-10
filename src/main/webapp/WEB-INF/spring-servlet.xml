@@ -25,13 +25,11 @@
     <bean class="org.springframework.web.servlet.view.ResourceBundleViewResolver">
         <property name="basename" value="views" />
     </bean>
-    
- 	<mvc:resources mapping="/resources/**" location="/resources/" />
-    
-</beans>
 
     <bean name="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
         <property name="basename" value = "locale.messages"/>
     </bean>
 
+    <mvc:resources mapping="/resources/**" location="/resources/" />
+    
 </beans>

@@ -26,16 +26,14 @@
 <form:form method="post" modelAttribute="loginBean"  class="needs-validation" novalidate='true'>
                  
          	 <div class="form-group">
-  			 <form:label path="userId">Username:</form:label>
-             <spring:message code="lg.User" text="UserName" />  
+  			    <form:label path="userId">Username:</form:label>
                 <form:input path="userId" class="form-control"  placeholder="Enter username" required='true' />
-               <form:errors path="userId" cssClass="error" />
+                 <form:errors path="userId" cssClass="error"/>
                 <div class="invalid-feedback">Please fill out this field.</div>
           </div>
            <div class="form-group">
-            <form:label path="password">Password:</form:label>
-              <spring:message code="lg.Password" text="Password" />  
-               <form:input path="password" class="form-control" placeholder="Enter password" required='true' />
+               <form:label path="password">Password:</form:label>
+               <form:password path="password" class="form-control" placeholder="Enter password" required='true' />
                <form:errors path="password" cssClass="error" />
                <div class="invalid-feedback">Please fill out this field.</div>
           </div>

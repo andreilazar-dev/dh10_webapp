@@ -16,16 +16,15 @@ public class LoginValidator implements Validator {
 
     @Override
     public void validate(Object o, Errors errors) {
-        ValidationUtils.rejectIfEmptyOrWhitespace(errors,
-                "userId", "required.username","Field Username is required.");
 
-        System.out.println("In validate");
         LoginBean loginBean = (LoginBean) o;
         LoginCheck loginCheck = new LoginCheck();
 
         if(!loginCheck.checkLogin(loginBean)){
             errors.rejectValue("userId", "userId.invalid");
+            errors.rejectValue("password","password.invalid");
         }
+
 
     }
 
