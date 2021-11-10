@@ -30,4 +30,8 @@
     
 </beans>
 
+    <bean name="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+        <property name="basename" value = "locale.messages"/>
+    </bean>
 
+</beans>
