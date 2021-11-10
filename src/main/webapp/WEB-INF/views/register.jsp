@@ -5,10 +5,12 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+
     <title>Registration</title>
 </head>
 <body>
@@ -19,38 +21,45 @@
  </div>
   
 <div class="container">
-<form:form id="regForm" modelAttribute="user" action="registerProcess" method="post">
+<form:form id="regForm"  modelAttribute="user" action="registerProcess" method="post" class="needs-validation" novalidate='true'>
 
   <div class="form-group">
      
             <form:label path="userId">Username:</form:label>
-            <form:input path="userId" name="userId" id="userId" class="form-control" placeholder="Enter username" />
+            <form:input path="userId" name="userId" id="userId" class="form-control" placeholder="Enter username"  required='true' />
+            <form:errors path="userId" cssClass="error" />
+             <div class="invalid-feedback">Please fill out this field.</div>
   </div>
    <div class="form-group">     
             <form:label path="password">Password:</form:label>
             <form:password path="password" name="password"
-                               id="password" class="form-control" placeholder="Enter password"/>
+                               id="password" class="form-control" placeholder="Enter password" required='true'/>
+            <div class="invalid-feedback">A minimum 8 characters password contains a combination of <strong>uppercase and lowercase letter</strong> and <strong>number</strong></div>
    </div>                       
    <div class="form-group">
        
            <form:label path="firstName">FirstName:</form:label>
            <form:input path="firstName" name="firstName"
-                            id="firstName" class="form-control" placeholder="Enter first name"/>
+                            id="firstName" class="form-control" placeholder="Enter first name" required='true'/>
+            <div class="invalid-feedback">Please fill out this field.</div>
     </div>
     <div class="form-group">
        
             <form:label path="lastName">LastName:</form:label>
-            <form:input path="lastName" name="lastName" id="lastName" class="form-control" placeholder="Enter lastName"/>
+            <form:input path="lastName" name="lastName" id="lastName" class="form-control" placeholder="Enter lastName" required='true'/>
+             <div class="invalid-feedback">Please fill out this field.</div>
      </div>
      <div class="form-group">
         
-           <form:label path="Country">Country:</form:label>
-            <form:input path="Country" name="Country" id="Country" class="form-control" placeholder="Enter country"/>
+           <form:label path="country">Country:</form:label>
+            <form:input path="country" name="country" id="country" class="form-control" placeholder="Enter country" required='true'/>
+            <form:errors path="country" cssClass="error" />
+             <div class="invalid-feedback">Please fill out this field.</div>
      </div>
      <div class="form-group">
        
            
-          <form:button id="register" name="register" class="btn btn-primary">Register</form:button>
+          <form:button type="submit" id="register" name="register" class="btn btn-primary">Register</form:button>
      </div>
      
      <div class="form-group">
@@ -60,11 +69,30 @@
 </form:form>
 
 </div>
-</body>
-
-<script>
 
 
+ <script>
+// Disable form submissions if there are invalid fields
+(function() {
+  'use strict';
+  window.addEventListener('load', function() {
+    // Get the forms we want to add validation styles to
+    var forms = document.getElementsByClassName('needs-validation');
+    // Loop over them and prevent submission
+    var validation = Array.prototype.filter.call(forms, function(form) {
+      form.addEventListener('submit', function(event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  }, false);
+})();
 
 </script>
+
+</body>
+
 </html>
