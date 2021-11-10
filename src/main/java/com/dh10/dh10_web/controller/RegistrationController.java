@@ -34,23 +34,16 @@ public class RegistrationController {
     	
     	if(!r.firstNameCheck(user.getFirstName()) || !r.passwordCheck(user.getPassword()) || !r.lastNameCheck(user.getLastName()) || !r.userCheck(user.getUserId()))
     		return "error";
-    	/*
-    	 if(r.countryCheck(user.getCountry()) == null)
-    		return "error"; 
-    	*/
     	
-    	
-    	r.saveRegistration(user);
-    	return "reserve";
+    	 //if(r.countryCheck(user.getCountry()) == null)
+    	//	return "error"; 
     	
     	
     	
-    	
-    
-    
-    	//call addUser when implemented
+    	//r.saveRegistration(user);
+    	return "home";
     	
     	
-        //return new ModelAndView("welcome", "firstname", user.getFirstname());
+ 
     }
 }

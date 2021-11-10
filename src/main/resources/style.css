@@ -1,0 +1,13 @@
+@charset "ISO-8859-1";
+
+body{
+    background-color: lightgrey !important;
+    color:black;
+
+    font-family: arial, Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+
+    /*spaziatura tra le righe, posso scrivere anche in px*/
+    line-height: 1.6em;
+}
