@@ -26,4 +26,8 @@
         <property name="basename" value="views" />
     </bean>
 
+    <bean name="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+        <property name="basename" value = "locale.messages"/>
+    </bean>
+
 </beans>

@@ -12,7 +12,7 @@ public class LoginCheck {
     private Dao<User> userDao = new UserDao();
 
     public boolean checkLogin (LoginBean loginBean){
-        Optional<User> user = userDao.get(loginBean.getUserId());
-        return user.map(value -> value.getPassword().equals(loginBean.getPassword())).orElse(false);
+        //Optional<User> user = userDao.get(loginBean.getUserId());
+        return false ;//user.map(value -> value.getPassword().equals(loginBean.getPassword())).orElse(false);
     }
 }

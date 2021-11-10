@@ -27,12 +27,11 @@
 <form:form method="post" modelAttribute="loginBean">
             
        
-         	 <div class="form-group">
-  			 <form:label path="userId">Username:</form:label>
-             <spring:message code="lg.User" text="UserName" />  
-                <form:input path="userId" class="form-control"  placeholder="Enter username" />
-               <form:errors path="userId" cssClass="error" />
-          </div>
+            <div class="form-group">
+  			     <form:label path="userId">Username:</form:label>
+                 <form:input path="userId" class="form-control"  placeholder="Enter username" />
+                 <form:errors path="userId" cssClass="error" />
+            </div>
            <div class="form-group">
             <form:label path="password">Password:</form:label>
               <spring:message code="lg.Password" text="Password" />  
