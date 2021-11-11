@@ -12,7 +12,7 @@
         http://www.springframework.org/schema/context/spring-context.xsd">
 
     <!-- Enables the Spring MVC @Controller programming model -->
-    <mvc:annotation-driven />
+  
     <context:component-scan
             base-package="com.dh10.dh10_web" />
     <mvc:default-servlet-handler />
@@ -31,5 +31,6 @@
     </bean>
 
     <mvc:resources mapping="/resources/**" location="/resources/" />
+     <mvc:annotation-driven />
     
 </beans>

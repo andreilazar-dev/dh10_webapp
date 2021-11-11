@@ -23,7 +23,7 @@
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
   <!-- Brand/logo -->
   <a class="navbar-brand" href="#">
-    <img src="img/logo.jsp" alt="logo" style="width:40px;" />
+    <img src="http://localhost:8080/dh10_web/resources/img/logo.jpg" alt="logo" style="width:40px;" />
   </a>
   
   <!-- Links -->
@@ -44,7 +44,7 @@
 </nav>
 
 <div class="jumbotron text-center">
-  <h1 class="display-3">WELCOME TO DH10 WEBAPP</h1>
+  <h1 class="text-primary">WELCOME TO DH10 WEBAPP</h1>
   <p>You can do bla bla bla .........</p> 
 </div>
 

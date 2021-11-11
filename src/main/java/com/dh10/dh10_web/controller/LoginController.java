@@ -25,8 +25,9 @@ public class LoginController {
     public String submit(@ModelAttribute("loginBean") LoginBean loginBean, BindingResult result,Model model) {
     	
     	//prova private area
-        if(loginBean.getUserId()=="root" && loginBean.getPassword()=="root")
+        if(loginBean.getUserId().equals("root") && loginBean.getPassword().equals("root"))
         	return "redirect:/reserve";
+  
         return "home";
         
         /*
