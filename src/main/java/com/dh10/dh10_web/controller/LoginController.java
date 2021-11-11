@@ -23,8 +23,16 @@ public class LoginController {
 
     @RequestMapping(method = RequestMethod.POST )
     public String submit(@ModelAttribute("loginBean") LoginBean loginBean, BindingResult result,Model model) {
-
+    	
+    	//prova private area
+        if(loginBean.getUserId()=="root" && loginBean.getPassword()=="root")
+        	return "redirect:/reserve";
+        return "home";
+        
+        /*
+         
         new LoginValidator().validate(loginBean,result);
+       
 
         if(result.hasErrors()){
             return "login";
@@ -34,5 +42,7 @@ public class LoginController {
             model.addAttribute("userName", loginBean.getUserId());
             return "redirect:/reserve";
         }
+        
+         */
     }
 }
