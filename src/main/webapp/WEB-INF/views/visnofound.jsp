@@ -48,8 +48,8 @@
 					<th scope="row">${status.index + 1}</th>
 					<td><c:out value="${syn.synonymus_name}" /></td>
 					<td><c:out value="${syn.algorithm_name}" /></td>
-    				<c:if test="${syn.status=='1'}"><td style="color:green"><c:out value="Approvato" /></td></c:if>
-					<c:if test="${syn.status=='0'}"><td style="color:red"><c:out value="Non approvato" /></td></c:if>
+    				<c:if test="${syn.status=='0'}"><td style="color:green"><c:out value="Approvato" /></td></c:if>
+					<c:if test="${syn.status=='1'}"><td style="color:red"><c:out value="Non approvato" /></td></c:if>
 					<td><c:out value="${syn.country.getCountry_name()}" /></td>
 	
 				</tr>

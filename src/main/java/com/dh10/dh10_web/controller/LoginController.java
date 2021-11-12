@@ -1,7 +1,9 @@
 package com.dh10.dh10_web.controller;
 
 import com.dh10.dh10_web.model.LoginBean;
+import com.dh10.dh10_web.service.LoginCheck;
 import com.dh10.dh10_web.validator.LoginValidator;
+import com.dh10.stringchecker.model.dao.Dao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
@@ -23,11 +25,17 @@ public class LoginController {
 
     @RequestMapping(method = RequestMethod.POST )
     public String submit(@ModelAttribute("loginBean") LoginBean loginBean, BindingResult result,Model model) {
-    	
+
+        LoginCheck loginCheck = new LoginCheck();
     	//prova private area
-        if(loginBean.getUserId().equals("root") && loginBean.getPassword().equals("root"))
-        	return "redirect:/reserve";
-  
+        if(loginBean.getUserId().equals("ADMIN")){
+            //Save id in session
+            model.addAttribute("userName",loginCheck.getNameOfUser(loginBean) );
+            return "redirect:/reserve";
+        }
+
+        //Save id in session
+        model.addAttribute("userName", loginBean.getUserId());
         return "home";
         
         /*
