@@ -1,0 +1,17 @@
+body{
+    width: 100%;
+}
+
+.row{
+    align-content: center;
+}
+
+.card{
+    width: 18rem;
+    height: 18rem;
+}
+
+.card:hover{
+    transform: scale(1.05);
+ transition: all 0.3s ease-in;
+}
