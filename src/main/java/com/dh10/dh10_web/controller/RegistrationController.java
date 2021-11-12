@@ -34,7 +34,6 @@ public class RegistrationController {
     public String addUser(@ModelAttribute("user") User user, BindingResult result, Model model) {
     	
     	Registration r = new Registration();
-
 		new RegistrationValidator().validate(user,result);
 
 		if(result.hasErrors()){

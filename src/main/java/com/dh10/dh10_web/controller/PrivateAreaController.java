@@ -4,15 +4,14 @@ import com.dh10.dh10_web.service.SinonymousService;
 import com.dh10.stringchecker.model.beans.Synonymus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 @Controller
 @SessionAttributes("userName")
@@ -25,6 +24,20 @@ public class PrivateAreaController {
         int leve = 1;
         int contains = 3;
         int jaro= 5;
+        model.addAttribute("stats",synDao.getAlgorithmStats());
+
+        Map<String, Integer> stats = synDao.getAlgorithmStats();
+        Set<String> keys = stats.keySet();
+        String html = "['Algoritmi', 'Numero'],";
+        for (String k : keys){
+            html +=  "['" + k + "',"+stats.get(k) + "],";
+        }
+        System.out.println("HTML--->"+ html);
+        model.addAttribute("html", html);
+
+
+
+
         model.addAttribute("levenstein", leve);
         model.addAttribute("contains", contains);
         model.addAttribute("jarowinkler", jaro);
@@ -73,5 +86,12 @@ public class PrivateAreaController {
         model.addObject("numSyn", n);
         model.setViewName("visapprove");
         return model;
+    }
+
+    @GetMapping("/country/{stato}")
+    public String country(@PathVariable String stato, Model model) {
+        //System.out.println("Country--------->"+stato);
+        model.addAttribute("stato",stato);
+        return "countryview";
     }
 }

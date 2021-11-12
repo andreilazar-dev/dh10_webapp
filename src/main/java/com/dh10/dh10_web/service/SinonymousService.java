@@ -5,7 +5,9 @@ import com.dh10.stringchecker.model.dao.Dao;
 import com.dh10.stringchecker.model.dao.SynonymusDao;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class SinonymousService {
 
@@ -58,6 +60,21 @@ public class SinonymousService {
         return completeList;
     }
 
+    public Map<String,Integer> getAlgorithmStats(){
+        Map<String,Integer> stats = new HashMap<>();
+
+        for (Synonymus tmp : completeList) {
+
+            if (stats.containsKey(tmp.getAlgorithm_name())){
+                Integer value = stats.get(tmp.getAlgorithm_name());
+                stats.put(tmp.getAlgorithm_name(), value + 1);
+            }
+            else {
+                stats.put(tmp.getAlgorithm_name(),1);
+            }
+        }
+        return  stats;
+    }
     public void synonymousUpdate(List<Synonymus> synonymuses) {
         synonymusDao.update(synonymuses);
     }
