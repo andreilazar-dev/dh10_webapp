@@ -27,18 +27,16 @@ public class Registration {
 	}
 	
 	public boolean userCheck(String user) {
-		/*if(user.length()<30 && user.length()>=3){
+		if(user.length()<30 && user.length()>=3){
 			return userDao.get(user) != null; //user exist
 		}
 		System.out.println("user sbagliato");
-		return false;
-		*/
 		return true;
+		
 	}
 	
 	public boolean passwordCheck(String password) {
-		//return password.matches("((?=.*[0-9])(?=.*[a-zA-Z]).{8,20})");
-		return true;
+		return password.matches("((?=.*[0-9])(?=.*[a-zA-Z]).{8,20})");
 	}
 	
 	public String countryCheck(String country) {

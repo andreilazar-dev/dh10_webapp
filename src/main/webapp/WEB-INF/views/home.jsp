@@ -23,7 +23,9 @@
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
   <!-- Brand/logo -->
   <a class="navbar-brand" href="#">
-    <img src="http://localhost:8080/dh10_web/resources/img/logo.jpg" alt="logo" style="width:40px;" />
+ 
+   <img src= <%=request.getContextPath() + "/resources/img/logo.jpg"%> alt="logo" style="width:40px;" />
+ 
   </a>
   
   <!-- Links -->
@@ -56,7 +58,7 @@
   </ul>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="la.jpg" alt="Los Angeles" width="1100" height="500">
+      <img src=<%=request.getContextPath() + "/resources/img/figo.jpg"%> alt="Los Angeles" width="1100" height="500">
       <div class="carousel-caption">
         <h3>Los Angeles</h3>
         <p>We had such a great time in LA!</p>

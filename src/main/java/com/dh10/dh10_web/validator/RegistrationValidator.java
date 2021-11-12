@@ -10,11 +10,7 @@ import org.springframework.validation.Validator;
 
 public class RegistrationValidator implements Validator {
 	
-	private Registration r;
-	
-	public RegistrationValidator(Registration r) {
-		this.r = r;
-	}
+
 	
     @Override
     public boolean supports(Class<?> aClass) {
@@ -25,22 +21,22 @@ public class RegistrationValidator implements Validator {
     public void validate(Object o, Errors errors) {
 
         User user = (User) o;
-        r = new Registration();
+        Registration r = new Registration();
 
-        /*if(r.userCheck(user.getUserId())){
+       if(r.userCheck(user.getUserId())){
             errors.rejectValue("userId", "userId.exist");
-        }*/
+        }
         if(r.countryCheck(user.getCountry()) == null){
             errors.rejectValue("country", "country.notFind");
         }
-        if(r.firstNameCheck(user.getFirstName())){
-            errors.rejectValue("firstName", "insert a valid first name");
+        if(!r.firstNameCheck(user.getFirstName())){
+            errors.rejectValue("firstName", "firstName.invalid");
         }
-        if(r.lastNameCheck(user.getLastName())){
-            errors.rejectValue("lastName", "insert a valid last name");
+        if(!r.lastNameCheck(user.getLastName())){
+            errors.rejectValue("lastName", "lastName.invalid");
         }
-        if(r.passwordCheck(user.getPassword())){
-            errors.rejectValue("password", "insert a valid password");
+        if(!r.passwordCheck(user.getPassword())){
+            errors.rejectValue("password", "password.invalid");
         }
     }
 }

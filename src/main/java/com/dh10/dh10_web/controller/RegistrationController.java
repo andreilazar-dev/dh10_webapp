@@ -35,14 +35,15 @@ public class RegistrationController {
     	
     	Registration r = new Registration();
 
-		new RegistrationValidator(r).validate(user,result);
+		new RegistrationValidator().validate(user,result);
 
 		if(result.hasErrors()){
-			//return "register";
-			return "home";
+			model.addAttribute("user",user);
+			return "register";
+		
 		}else{
-			//r.saveRegistration(user);
-			return "reserve";
+			r.saveRegistration(user);
+			return "home";
 		}
     }
 }

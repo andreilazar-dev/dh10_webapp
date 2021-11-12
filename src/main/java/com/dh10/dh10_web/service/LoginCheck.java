@@ -7,12 +7,29 @@ import com.dh10.dh10_web.model.LoginBean;
 
 import java.util.Optional;
 
+import org.springframework.validation.Errors;
+
 public class LoginCheck {
 
     private Dao<User> userDao = new UserDao();
 
-    public boolean checkLogin (LoginBean loginBean){
-        //Optional<User> user = userDao.get(loginBean.getUserId());
-        return false ;//user.map(value -> value.getPassword().equals(loginBean.getPassword())).orElse(false);
+    public boolean checkLogin (LoginBean loginBean, Errors errors){ 
+        User user = userDao.get(loginBean.getUserId());
+        if(user==null) {
+        	 //errors.rejectValue("userId", "userId.invalid");
+        	return false;
+        }
+       
+        if(!user.getPassword().equals(loginBean.getPassword())) {
+        	//errors.rejectValue("password","password.invalid");
+        	return false;
+        }
+        
+        //aggiungere errore
+       
+       
+        
+        return true;
+        
     }
 }

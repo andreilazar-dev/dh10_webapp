@@ -20,7 +20,7 @@ public class LoginValidator implements Validator {
         LoginBean loginBean = (LoginBean) o;
         LoginCheck loginCheck = new LoginCheck();
 
-        if(!loginCheck.checkLogin(loginBean)){
+        if(!loginCheck.checkLogin(loginBean,errors)){
             errors.rejectValue("userId", "userId.invalid");
             errors.rejectValue("password","password.invalid");
         }

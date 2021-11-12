@@ -24,26 +24,24 @@ public class LoginController {
     @RequestMapping(method = RequestMethod.POST )
     public String submit(@ModelAttribute("loginBean") LoginBean loginBean, BindingResult result,Model model) {
     	
-    	//prova private area
+    	
         if(loginBean.getUserId().equals("root") && loginBean.getPassword().equals("root"))
         	return "redirect:/reserve";
   
-        return "home";
-        
-        /*
+       
          
         new LoginValidator().validate(loginBean,result);
        
 
         if(result.hasErrors()){
+        	model.addAttribute("loginBean",loginBean);
             return "login";
+
         }else {
-            //If user and password is correct
-            //Save id in session
             model.addAttribute("userName", loginBean.getUserId());
-            return "redirect:/reserve";
+            return "home";
         }
         
-         */
+         
     }
 }
