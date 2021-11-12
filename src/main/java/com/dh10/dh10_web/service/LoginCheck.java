@@ -4,6 +4,7 @@ import com.dh10.access.model.beans.User;
 import com.dh10.access.model.dao.Dao;
 import com.dh10.access.model.dao.UserDao;
 import com.dh10.dh10_web.model.LoginBean;
+import org.springframework.validation.Errors;
 
 import java.util.Optional;
 
@@ -31,5 +32,10 @@ public class LoginCheck {
         
         return true;
         
+    }
+
+    public String getNameOfUser(LoginBean loginBean){
+        User user = userDao.get(loginBean.getUserId());
+        return user.getFirstName();
     }
 }

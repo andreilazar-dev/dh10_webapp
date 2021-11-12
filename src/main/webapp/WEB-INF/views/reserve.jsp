@@ -16,11 +16,9 @@
 
         var data = google.visualization.arrayToDataTable([
           ['Task', 'Hours per Day'],
-          ['Work',     11],
-          ['Eat',      2],
-          ['Commute',  2],
-          ['Watch TV', 2],
-          ['Sleep',    7]
+          ['Levenstein',     20],
+          ['Contains',      1],
+          ['JaroWinkler',  3]
         ]);
 
         var options = {
@@ -39,7 +37,7 @@
 <title>Admin - home page</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-<link rel="stylesheet" href="styleadmin.css">
+<link rel="stylesheet"  type="text/css" href= <%=request.getContextPath() + "/resources/styleadmin.css"%>>
 </head>
 <body>
 
@@ -58,7 +56,9 @@
                     <h5 class="card-title">Sinonimi da approvare</h5>
                     <p class="card-text">In questa sezione si trova una lista di sinonimi che dovresti approvare.</p>
                     <p class="card-text ">Ci sono <label style="color:orange; font-weight: bold;">n</label> sinonimi da approvare.</p>
-                    <a href="#" class="btn btn-primary">GO!</a>
+                    <form:form id="visSynA" modelAttribute="synonymusapprove" action="fetchApprove" method="post">
+                    <input type="submit" value="GO!" class="btn btn-primary">
+                    </form:form>
                 </div>
                 </div>
         </div>
@@ -69,7 +69,9 @@
                     <h5 class="card-title">Sinonimi senza soluzione</h5>
                     <p class="card-text">In questa sezione si trova una lista di sinonimi a cui non è stata trovata una corrispondenza nel DB.</p>
                     <p class="card-text">Ci sono <label style="color: red; font-weight: bold;">n</label> sinonimi da associare.</p>
-                    <a href="#" class="btn btn-primary">GO!</a>
+                    <form:form id="visSynNF" modelAttribute="synonymousnotfound" action="fetchNoFound" method="post">
+                    <input type="submit" value="GO!" class="btn btn-primary">
+                    </form:form>
                 </div>
                 </div>
         </div>
@@ -80,13 +82,44 @@
                     <h5 class="card-title">Sinonimi</h5>
                     <p class="card-text">In questa sezione si trova una lista con i sinonimi all'interno del DB, i quali possono essere filtrati.</p>
                     <p class="card-text">Ci sono  <label value="${numberSyn}" style="color:green; font-weight: bold;">${numberSyn}</label> sinonimi nel DB.</p>
-                   	<form:form id="visSynF" modelAttribute="synonymous" action="loadsynonymus" method="post">
+                   	<form:form id="visSynF" modelAttribute="synonymous" action="fetch" method="post">
                     <input type="submit" value="GO!" class="btn btn-primary">
                     </form:form>
                 </div>
                 </div>
         </div>      
     </div>
+    
+     <div class="row align-content-md-center mt-4">
+        <div class="col-md mt-3">
+            
+                <div class="card text-center shadow-lg">
+                
+                <div class="card-body">
+                    <h5 class="card-title">Utenti</h5>
+                    <p class="card-text">In questa sezione si trovano gli utenti presenti nel DB</p>
+                   
+                    <form:form id="visSynA" modelAttribute="synonymusapprove" action="fetchApprove" method="post">
+                    <input type="submit" value="GO!" class="btn btn-primary">
+                    </form:form>
+                </div>
+                </div>
+        </div>
+        <div class="col-md mt-3">
+                <div class="card text-center shadow-lg" >
+                
+                <div class="card-body">
+                    <h5 class="card-title">Utenti altro</h5>
+                    <p class="card-text">In questa sezione ci sono cose degli utenti</p>
+                    
+                    <form:form id="visSynNF" modelAttribute="synonymousnotfound" action="fetchNoFound" method="post">
+                    <input type="submit" value="GO!" class="btn btn-primary">
+                    </form:form>
+                </div>
+                </div>
+        </div>
+    </div>
+    
     <div class="row mt-5">
         <div class="col-md">
             <p class="h1">Statistica algoritmi:</p>
