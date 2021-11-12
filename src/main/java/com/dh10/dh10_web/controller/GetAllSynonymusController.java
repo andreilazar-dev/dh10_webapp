@@ -21,8 +21,8 @@ public class GetAllSynonymusController {
 	
     @RequestMapping(method = RequestMethod.GET)
     public String init(Model model) {
-        SynonyBean syn = new SynonyBean();
-        model.addAttribute("SynonyBean",syn);
+        Synonymus syn = new Synonymus();
+        model.addAttribute("Synonymous",syn);
         return "syn";
     }
 
