@@ -31,7 +31,7 @@ public class LoginController {
         if(loginBean.getUserId().equals("ADMIN")){
             //Save id in session
             model.addAttribute("userName",loginCheck.getNameOfUser(loginBean) );
-            return "redirect:/reserve";
+            return "redirect:reserve";
         }
 
         //Save id in session
@@ -51,7 +51,7 @@ public class LoginController {
             model.addAttribute("userName", loginBean.getUserId());
             return "home";
         }
-        
+        */
          
     }
 }

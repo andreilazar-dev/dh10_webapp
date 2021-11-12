@@ -13,12 +13,14 @@
       google.charts.setOnLoadCallback(drawChart);
 
       function drawChart() {
-
+          var leve = parseInt(${levenstein});
+          var contains = parseInt(${contains});
+          var jaro =  parseInt(${jarowinkler});
         var data = google.visualization.arrayToDataTable([
           ['Task', 'Hours per Day'],
-          ['Levenstein',     20],
-          ['Contains',      1],
-          ['JaroWinkler',  3]
+          ['Levenstein',   leve],
+          ['Contains',     contains],
+          ['JaroWinkler',  jaro]
         ]);
 
         var options = {
@@ -44,7 +46,7 @@
 <div class="container">
     <div class="row mt-5">
         <div class="col-md">
-            <p class="h1">Ciao, ${userName}</p>
+            <p class="h1">Ciao, ${userName} </p>
         </div>
     </div>
     <div class="row align-content-md-center mt-2">
