@@ -14,30 +14,38 @@ public class Registration {
 	private Dao<User> userDao = new UserDao();
 
 	public boolean firstNameCheck(String firstName) {
-		if (firstName.length() <= 30 && firstName.length() >=1)
+		if (firstName.length() <= 30 && firstName.length() >=3)
 			return true;
-		else
+		else {
+			System.out.println("nome sbagliato");
 			return false;
+		}
 	}
 			
 	public boolean lastNameCheck(String lastname) {
-		return (lastname.length() <= 30 && lastname.length()>=1);
+		return (lastname.length() <= 30 && lastname.length()>=3);
 	}
 	
 	public boolean userCheck(String user) {
-		if(user.length()<30){
+		if(user.length()<30 && user.length()>=3){
 			return userDao.get(user) != null; //user exist
 		}
-		return false;
+		System.out.println("user sbagliato");
+		return true;
+		
 	}
 	
 	public boolean passwordCheck(String password) {
-		//return password.matches("((?=.*[0-9])(?=.*[a-zA-Z]).{8,20})");
-		return true;
+		return password.matches("((?=.*[0-9])(?=.*[a-zA-Z]).{8,20})");
 	}
 	
 	public String countryCheck(String country) {
 		StringChecker countrycheck = new CountryChecker();
+		if(country.length()<3) {
+			System.out.println("nazione sbagliato");
+			return null;
+			
+		}
 		//la stringa è valida se è diversa da null
 		return countrycheck.find_standard(country);
 	}

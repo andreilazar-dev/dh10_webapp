@@ -38,12 +38,12 @@ public class RegistrationController {
 		new RegistrationValidator().validate(user,result);
 
 		if(result.hasErrors()){
+			model.addAttribute("user",user);
 			return "register";
+		
 		}else{
-			//All correct
-			//TODO:Save registration in db
-
-			return "reserve";
+			r.saveRegistration(user);
+			return "home";
 		}
     }
 }

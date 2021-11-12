@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,7 +23,9 @@
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
   <!-- Brand/logo -->
   <a class="navbar-brand" href="#">
-    <img src="/resources/img/logo.jpg" alt="logo" style="width:40px;">
+ 
+   <img src= <%=request.getContextPath() + "/resources/img/logo.jpg"%> alt="logo" style="width:40px;" />
+ 
   </a>
   
   <!-- Links -->
@@ -43,7 +46,7 @@
 </nav>
 
 <div class="jumbotron text-center">
-  <h1 class="display-3">WELCOME TO DH10 WEBAPP</h1>
+  <h1 class="text-primary">WELCOME TO DH10 WEBAPP</h1>
   <p>You can do bla bla bla .........</p> 
 </div>
 
@@ -55,7 +58,7 @@
   </ul>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="la.jpg" alt="Los Angeles" width="1100" height="500">
+      <img src=<%=request.getContextPath() + "/resources/img/figo.jpg"%> alt="Los Angeles" width="1100" height="500">
       <div class="carousel-caption">
         <h3>Los Angeles</h3>
         <p>We had such a great time in LA!</p>

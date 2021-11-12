@@ -27,33 +27,36 @@
      
             <form:label path="userId">Username:</form:label>
             <form:input path="userId" name="userId" id="userId" class="form-control" placeholder="Enter username"  required='true' />
-            <form:errors path="userId" cssClass="error" />
+            <form:errors path="userId" cssClass="text-danger" />
              <div class="invalid-feedback">Please fill out this field.</div>
   </div>
    <div class="form-group">     
             <form:label path="password">Password:</form:label>
             <form:password path="password" name="password"
                                id="password" class="form-control" placeholder="Enter password" required='true'/>
-            <div class="invalid-feedback">A minimum 8 characters password contains a combination of <strong>uppercase and lowercase letter</strong> and <strong>number</strong></div>
+             <form:errors path="password" cssClass="text-danger" />
+            <div class="invalid-feedback">Please fill out this field.</div>
    </div>                       
    <div class="form-group">
        
            <form:label path="firstName">FirstName:</form:label>
            <form:input path="firstName" name="firstName"
                             id="firstName" class="form-control" placeholder="Enter first name" required='true'/>
+            <form:errors path="firstName" cssClass="text-danger" />
             <div class="invalid-feedback">Please fill out this field.</div>
     </div>
     <div class="form-group">
        
             <form:label path="lastName">LastName:</form:label>
             <form:input path="lastName" name="lastName" id="lastName" class="form-control" placeholder="Enter lastName" required='true'/>
+            <form:errors path="lastName" cssClass="text-danger" />
              <div class="invalid-feedback">Please fill out this field.</div>
      </div>
      <div class="form-group">
         
            <form:label path="country">Country:</form:label>
             <form:input path="country" name="country" id="country" class="form-control" placeholder="Enter country" required='true'/>
-            <form:errors path="country" cssClass="error" />
+            <form:errors path="country" cssClass="text-danger" />
              <div class="invalid-feedback">Please fill out this field.</div>
      </div>
      <div class="form-group">
