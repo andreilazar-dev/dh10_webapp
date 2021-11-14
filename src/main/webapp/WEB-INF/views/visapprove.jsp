@@ -28,7 +28,10 @@
 	</div>
 	<div class="row">
 	        <div class="col-md">
-	            <p class="h4">Sinonimi da approvare:  <label style="color:orange">${numSyn} </label></p>
+	            <p class="h4">Sinonimi da approvare:  <label style="color:orange">${numSyn} </label>
+	             <a href="reserve">
+   				<input type="button" value="Home" class="btn btn-primary float-right"/>
+				</a></p>
 	        </div>
 	</div>
 	<div class="row mt-3">
@@ -48,8 +51,8 @@
 					<th scope="row">${status.index + 1}</th>
 					<td><c:out value="${syn.synonymus_name}" /></td>
 					<td><c:out value="${syn.algorithm_name}" /></td>
-    				<c:if test="${syn.status=='0'}"><td style="color:green"><c:out value="Approvato" /></td></c:if>
-					<c:if test="${syn.status=='1'}"><td style="color:red"><c:out value="Non approvato" /></td></c:if>
+    				<c:if test="${syn.status=='1'}"><td style="color:green"><c:out value="Approvato" /></td></c:if>
+					<c:if test="${syn.status=='0'}"><td style="color:red"><c:out value="Non approvato" /></td></c:if>
 					<td><c:out value="${syn.country.getCountry_name()}" /></td>
 					
 	

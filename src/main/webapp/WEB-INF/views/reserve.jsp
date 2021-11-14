@@ -4,6 +4,15 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<style>
+	.card{
+    transition: all 0.3s ease-in;
+   }
+   .card:hover{
+       transform: translateY(-8px);
+   }
+</style>
+
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
@@ -13,9 +22,8 @@
       google.charts.setOnLoadCallback(drawChart);
 
       function drawChart() {
-          var leve = parseInt(${levenstein});
-          var contains = parseInt(${contains});
-          var jaro =  parseInt(${jarowinkler});
+          var algoritmis = ${listAlgo};
+          
         var data = google.visualization.arrayToDataTable([
           ['Task', 'Hours per Day'],
           ['Levenstein',   leve],
@@ -56,10 +64,10 @@
                 
                 <div class="card-body">
                     <h5 class="card-title">Sinonimi da approvare</h5>
-                    <p class="card-text">In questa sezione si trova una lista di sinonimi che dovresti approvare.</p>
-                    <p class="card-text ">Ci sono <label style="color:orange; font-weight: bold;">n</label> sinonimi da approvare.</p>
+                    <p class="card-text ">Numero di sinonimi da approvare
+                    <h1 class="card-text" style="color:orange; font-weight: bold;">${countToApprove}</h1></p>
                     <form:form id="visSynA" modelAttribute="synonymusapprove" action="fetchApprove" method="post">
-                    <input type="submit" value="GO!" class="btn btn-primary">
+                     <p><input type="submit" value="GO!" class="btn btn-primary"></p>
                     </form:form>
                 </div>
                 </div>
@@ -69,10 +77,10 @@
                 
                 <div class="card-body">
                     <h5 class="card-title">Sinonimi senza soluzione</h5>
-                    <p class="card-text">In questa sezione si trova una lista di sinonimi a cui non è stata trovata una corrispondenza nel DB.</p>
-                    <p class="card-text">Ci sono <label style="color: red; font-weight: bold;">n</label> sinonimi da associare.</p>
+                    <p class="card-text">Numero di sinonimi senza soluzione
+                    <h1 class="card-text" style="color: red; font-weight: bold;">${countToAssociate}</h1></p>
                     <form:form id="visSynNF" modelAttribute="synonymousnotfound" action="fetchNoFound" method="post">
-                    <input type="submit" value="GO!" class="btn btn-primary">
+                    <p><input type="submit" value="GO!" class="btn btn-primary"></p>
                     </form:form>
                 </div>
                 </div>
@@ -82,10 +90,10 @@
                 
                 <div class="card-body">
                     <h5 class="card-title">Sinonimi</h5>
-                    <p class="card-text">In questa sezione si trova una lista con i sinonimi all'interno del DB, i quali possono essere filtrati.</p>
-                    <p class="card-text">Ci sono  <label value="${numberSyn}" style="color:green; font-weight: bold;">${numberSyn}</label> sinonimi nel DB.</p>
+                    <p class="card-text">Numero totale di sinonimi
+                    <h1 class="card-text" style="color:green; font-weight: bold;">${countAll}</h1></p>
                    	<form:form id="visSynF" modelAttribute="synonymous" action="fetch" method="post">
-                    <input type="submit" value="GO!" class="btn btn-primary">
+                    <p><input type="submit" value="GO!" class="btn btn-primary"></p>
                     </form:form>
                 </div>
                 </div>
@@ -94,19 +102,18 @@
     
      <div class="row align-content-md-center mt-4">
         <div class="col-md mt-3">
-            
-                <div class="card text-center shadow-lg">
+                <div class="card text-center shadow-lg" >
                 
                 <div class="card-body">
-                    <h5 class="card-title">Utenti</h5>
-                    <p class="card-text">In questa sezione si trovano gli utenti presenti nel DB</p>
-                   
-                    <form:form id="visSynA" modelAttribute="synonymusapprove" action="fetchApprove" method="post">
-                    <input type="submit" value="GO!" class="btn btn-primary">
+                    <h5 class="card-title">Nazioni</h5>
+                    <p class="card-text">Numero totale di nazioni
+                    <h1 class="card-text" style="color:green; font-weight: bold;">${countCountry}</h1></p>
+                   	<form:form id="visSynF" modelAttribute="synonymous" action="fetchCountry" method="post">
+                    <p><input type="submit" value="GO!" class="btn btn-primary"></p>
                     </form:form>
                 </div>
                 </div>
-        </div>
+        </div>      
         <div class="col-md mt-3">
                 <div class="card text-center shadow-lg" >
                 
