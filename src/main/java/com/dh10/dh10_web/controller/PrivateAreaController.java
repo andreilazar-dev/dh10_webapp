@@ -87,6 +87,22 @@ public class PrivateAreaController {
         return model;
     }
 
+    @RequestMapping(value = "/fetchCountry", method = RequestMethod.POST)
+    public ModelAndView listCountry(ModelAndView model) throws IOException {
+
+        List<String> listSyn = service.getCountries();
+        List<Integer> numSyn= new ArrayList <Integer>();
+        int n= service.countCountry();
+        for(String s : listSyn) {
+            numSyn.add(service.countSynonymusCountry(s));
+        }
+        model.addObject("listCountry", listSyn);
+        model.addObject("numSyn", numSyn);
+        model.addObject("numCountry", n);
+        model.setViewName("viscountry");
+        return model;
+    }
+
     @GetMapping("/country/{name}")
     public String getEmployeesById(@PathVariable String name,Model model) {
         model.addAttribute("state",name);
