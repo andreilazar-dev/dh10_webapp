@@ -28,10 +28,6 @@ public class PrivateAreaController {
         model.addAttribute("countToApprove", service.countToApprove());
         model.addAttribute("countToAssociate", service.countToAssociate());
         model.addAttribute("countCountry",service.countCountry());
-        
-   
-   
-        model.addAttribute("stats",service.getAlgorithmStats());
 
         Map<String, Integer> stats = service.getAlgorithmStats();
         Set<String> keys = stats.keySet();
@@ -39,7 +35,6 @@ public class PrivateAreaController {
         for (String k : keys){
             html +=  "['" + k + "',"+stats.get(k) + "],";
         }
-        System.out.println("HTML--->"+ html);
         model.addAttribute("html", html);
         
         return "reserve";

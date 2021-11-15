@@ -55,7 +55,12 @@
                         <td style="color:red"><c:out value="Non approvato"/></td>
                     </c:if>
                     <td><c:out value="${syn.country.getCountry_name()}"/></td>
-                    <td><a href="country/${syn.country.getCountry_name()}"><span class="bi-search"></a></td>
+                    <c:if test="${syn.country.getCountry_name() != null}">
+                    <td><a href="country/${syn.country.getCountry_name()}"> <span class="bi-search"></span></a></td>
+                    </c:if>
+                    <c:if test="${syn.country.getCountry_name() == null}">
+                    <td></td>
+                    </c:if>
 			</c:forEach>
 			</tbody>
 		</table>
