@@ -7,6 +7,9 @@
   <title>Home page</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <meta http-equiv="refresh" content="0; URL= <%=request.getContextPath() + "/resources/home.html"%>" />
+  
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -24,23 +27,23 @@
   <!-- Brand/logo -->
   <a class="navbar-brand" href="#">
  
-   <img src= <%=request.getContextPath() + "/resources/img/logo.jpg"%> alt="logo" style="width:40px;" />
+   <img src= <%=request.getContextPath() + "/resources/img/logoTr.png"%> alt="logo" style="width:40px;" />
  
   </a>
   
   <!-- Links -->
   <ul class="navbar-nav">
     <li class="nav-item">
-      <a class="nav-link" href="#">Home</a>
+      <a class="nav-link" href="#">Home Page</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href=<%=request.getContextPath() + "/resources/gameArea.html"%>>Game area</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Country Explorer</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" href="#">Profile</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Game area</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Country</a>
     </li>
   </ul>
 </nav>
