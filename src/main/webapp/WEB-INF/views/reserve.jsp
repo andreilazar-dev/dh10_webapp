@@ -59,10 +59,9 @@
                 <div class="card-body">
                     <h5 class="card-title">Sinonimi da approvare</h5>
                     <p class="card-text">In questa sezione si trova una lista di sinonimi che dovresti approvare.</p>
-                    <p class="card-text ">Ci sono <label style="color:orange; font-weight: bold;">n</label> sinonimi da
-                        approvare.</p>
+                    <p class="card-text ">Ci sono <label style="color:orange; font-weight: bold;">n</label> sinonimi da approvare.</p>
                     <form:form id="visSynA" modelAttribute="synonymusapprove" action="fetchApprove" method="post">
-                        <input type="submit" value="GO!" class="btn btn-primary">
+                    <input type="submit" value="GO!" class="btn btn-primary">
                     </form:form>
                 </div>
             </div>
@@ -72,12 +71,10 @@
 
                 <div class="card-body">
                     <h5 class="card-title">Sinonimi senza soluzione</h5>
-                    <p class="card-text">In questa sezione si trova una lista di sinonimi a cui non è stata trovata una
-                        corrispondenza nel DB.</p>
-                    <p class="card-text">Ci sono <label style="color: red; font-weight: bold;">n</label> sinonimi da
-                        associare.</p>
+                    <p class="card-text">In questa sezione si trova una lista di sinonimi a cui non è stata trovata una corrispondenza nel DB.</p>
+                    <p class="card-text">Ci sono <label style="color: red; font-weight: bold;">n</label> sinonimi da associare.</p>
                     <form:form id="visSynNF" modelAttribute="synonymousnotfound" action="fetchNoFound" method="post">
-                        <input type="submit" value="GO!" class="btn btn-primary">
+                    <input type="submit" value="GO!" class="btn btn-primary">
                     </form:form>
                 </div>
             </div>
@@ -87,13 +84,10 @@
 
                 <div class="card-body">
                     <h5 class="card-title">Sinonimi</h5>
-                    <p class="card-text">In questa sezione si trova una lista con i sinonimi all'interno del DB, i quali
-                        possono essere filtrati.</p>
-                    <p class="card-text">Ci sono <label value="${numberSyn}"
-                                                        style="color:green; font-weight: bold;">${numberSyn}</label>
-                        sinonimi nel DB.</p>
-                    <form:form id="visSynF" modelAttribute="synonymous" action="fetch" method="post">
-                        <input type="submit" value="GO!" class="btn btn-primary">
+                    <p class="card-text">In questa sezione si trova una lista con i sinonimi all'interno del DB, i quali possono essere filtrati.</p>
+                    <p class="card-text">Ci sono  <label value="${numberSyn}" style="color:green; font-weight: bold;">${numberSyn}</label> sinonimi nel DB.</p>
+                   	<form:form id="visSynF" modelAttribute="synonymous" action="fetch" method="post">
+                    <input type="submit" value="GO!" class="btn btn-primary">
                     </form:form>
                 </div>
             </div>
@@ -102,18 +96,18 @@
 
     <div class="row align-content-md-center mt-4">
         <div class="col-md mt-3">
-
-            <div class="card text-center shadow-lg">
-
+            
+                <div class="card text-center shadow-lg">
+                
                 <div class="card-body">
                     <h5 class="card-title">Utenti</h5>
                     <p class="card-text">In questa sezione si trovano gli utenti presenti nel DB</p>
-
+                   
                     <form:form id="visSynA" modelAttribute="synonymusapprove" action="fetchApprove" method="post">
-                        <input type="submit" value="GO!" class="btn btn-primary">
+                    <input type="submit" value="GO!" class="btn btn-primary">
                     </form:form>
                 </div>
-            </div>
+                </div>
         </div>
         <div class="col-md mt-3">
             <div class="card text-center shadow-lg">

@@ -73,13 +73,10 @@
                         {{state.name }} <img width="20px" height="15px" src="{{state.flag}}">
                     </div></td>
                     <td><a href="country/${syn.country.getCountry_name()}"> CLICKA QUA</a></td>
-
-
-                </tr>
-            </c:forEach>
-            </tbody>
-        </table>
-    </div>
+			</c:forEach>
+			</tbody>
+		</table>
+	</div>
 </div>
 
 
