@@ -86,4 +86,11 @@ public class PrivateAreaController {
         model.setViewName("visapprove");
         return model;
     }
+
+    @GetMapping("/country/{name}")
+    public String getEmployeesById(@PathVariable String name,Model model) {
+        model.addAttribute("state",name);
+        return "countryview";
+    }
+
 }

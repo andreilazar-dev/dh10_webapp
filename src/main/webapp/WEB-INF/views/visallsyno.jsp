@@ -10,28 +10,13 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <!-- Bootstrap Font Icon CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <title>Admin - All synonymus</title>
 
-    <script>
-        var app = angular.module("myApp", []);
-        app.controller("recuperaPaese",
-
-            function ($scope, $http) {
-                $scope.titolo = "Ecco il paese";
-                var url = "https://restcountries.com/v2/name/Italy";
-                $http.get(url).then(
-                    function (x) {
-                        //alert(JSON.stringify(x));
-                        $scope.state = x.data[0];
-                    }
-                )
-            }
-        );
-    </script>
 
 </head>
-<body ng-app="myApp">
+<body>
 
 <div class="container">
 
@@ -54,6 +39,7 @@
                 <th scope="col">Algorithm</th>
                 <th scope="col">Status</th>
                 <th scope="col">Country</th>
+                <th></th>
             </tr>
             </thead>
             <tbody>
@@ -69,10 +55,7 @@
                         <td style="color:red"><c:out value="Non approvato"/></td>
                     </c:if>
                     <td><c:out value="${syn.country.getCountry_name()}"/></td>
-                    <td><div ng-controller="recuperaPaese">
-                        {{state.name }} <img width="20px" height="15px" src="{{state.flag}}">
-                    </div></td>
-                    <td><a href="country/${syn.country.getCountry_name()}"> CLICKA QUA</a></td>
+                    <td><a href="country/${syn.country.getCountry_name()}"><span class="bi-search"></a></td>
 			</c:forEach>
 			</tbody>
 		</table>
