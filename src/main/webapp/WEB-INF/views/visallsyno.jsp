@@ -26,8 +26,17 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md">
-            <p class="h4">Sinonimi presenti nel database: <label style="color:green">${numSyn} </label></p>
+        <div class="col-md ">
+            <label class="h4">Sinonimi presenti nel DB: <label style="color:green">${numSyn} </label></label>
+            <div class="btn-group float-right"">
+             <a href="reserve">
+   				<input type="button" value="Home" class="btn btn-primary float-right" style="margin-left:5px; "/>
+			</a>
+			<form:form id="visSynRS" modelAttribute="refreshSynonymusAll" action="refreshallsyno" method="post">
+                  <input type="submit" value="Refresh" class="btn btn-success float-right" style="margin-left:5px;"/>
+            </form:form>
+            </div>
+            
         </div>
     </div>
     <div class="row mt-3">

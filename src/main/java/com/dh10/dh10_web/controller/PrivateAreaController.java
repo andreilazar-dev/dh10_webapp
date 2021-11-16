@@ -94,8 +94,34 @@ public class PrivateAreaController {
         model.addObject("listCountry", listSyn);
         model.addObject("numSyn", numSyn);
         model.addObject("numCountry", n);
+        
+        String html = "['Country', 'N. Synonymus'],";
+        for (int k=0; k<listSyn.size(); k++){
+            html +=  "['" + listSyn.get(k) + "',"+numSyn.get(k) + "],";
+        }
+        model.addObject("html", html);
+        
         model.setViewName("viscountry");
         return model;
+    }
+    
+    @RequestMapping(value = "/refreshallsyno")
+    public ModelAndView refresh(ModelAndView model) throws IOException {
+    	service.refreshList();
+    	this.listSynonymus(model);   	
+    	return model;
+    }
+    @RequestMapping(value = "/refreshtoapprove")
+    public ModelAndView refreshToApprove(ModelAndView model) throws IOException {
+    	service.refreshList();
+    	this.listSynonymusApprove(model);   	
+    	return model;
+    }
+    @RequestMapping(value = "/refreshnofound")
+    public ModelAndView refreshNotFound(ModelAndView model) throws IOException {
+    	service.refreshList();
+    	this.listSynonymusNotFound(model);   	
+    	return model;
     }
 
     @GetMapping("/country/{name}")
@@ -103,5 +129,7 @@ public class PrivateAreaController {
         model.addAttribute("state",name);
         return "countryview";
     }
+    
+   
 
 }

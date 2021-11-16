@@ -52,6 +52,18 @@
             <p class="h1">Ciao, ${userName} </p>
         </div>
     </div>
+    <div class="row mt-5">
+        <div class="col-md">
+            <p class="h1">Statistica algoritmi:</p>
+        </div>
+    </div>
+    <div class="row">
+     <div class="col-md-3"></div>
+        <div class="col-md-3 align-content-md-center">
+            <div id="donutchart" style="width: 800px; height: 400px;"></div>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
     <div class="row align-content-md-center mt-2">
         <div class="col-md mt-3">
 
@@ -109,31 +121,10 @@
                 </div>
             </div>
         </div>
-        <div class="col-md mt-3">
-            <div class="card text-center shadow-lg" >
-
-                <div class="card-body">
-                    <h5 class="card-title">Utenti altro</h5>
-                    <p class="card-text">In questa sezione ci sono cose degli utenti</p>
-
-                    <form:form id="visSynNF" modelAttribute="synonymousnotfound" action="fetchNoFound" method="post">
-                        <input type="submit" value="GO!" class="btn btn-primary">
-                    </form:form>
-                </div>
-            </div>
-        </div>
+       
     </div>
 
-    <div class="row mt-5">
-        <div class="col-md">
-            <p class="h1">Statistica algoritmi:</p>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md align-content-md-center">
-            <div id="donutchart" class="shadow-lg" style="width: 940px; height: 540px;"></div>
-        </div>
-    </div>
+    
 </div>
 
 
