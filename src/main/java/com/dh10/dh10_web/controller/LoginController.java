@@ -30,7 +30,7 @@ public class LoginController {
     	//prova private area
         if(loginBean.getUserId().equals("ADMIN")){
             //Save id in session
-            //model.addAttribute("userName",loginCheck.getNameOfUser(loginBean) );
+            model.addAttribute("userName",loginCheck.getNameOfUser(loginBean));
             return "redirect:reserve";
         }
 
