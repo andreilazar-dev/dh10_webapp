@@ -1,19 +1,15 @@
 package com.dh10.dh10_web.controller;
 
-
-import com.dh10.dh10_web.model.Approved;
+import com.dh10.access.model.beans.User;
 import com.dh10.dh10_web.service.SinonymousService;
 import com.dh10.stringchecker.model.beans.Synonymus;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
-
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -27,6 +23,9 @@ public class PrivateAreaController {
     @RequestMapping(value = "/reserve",method = RequestMethod.GET)
     public String init(Model model) {
 
+        User usersession = service.getUser((String) model.getAttribute("userName"));
+        model.addAttribute("name",usersession.getFirstName());
+        model.addAttribute("surname",usersession.getLastName());
         model.addAttribute("countAll", service.countAll()); 
         model.addAttribute("countToApprove", service.countToApprove());
         model.addAttribute("countToAssociate", service.countToAssociate());
@@ -87,7 +86,7 @@ public class PrivateAreaController {
 
     @RequestMapping(value = "/fetchApprove/approved", method = RequestMethod.POST)
     public ModelAndView listSynonymusApprovePost(ModelAndView model, @RequestBody List<String> jsonApproved) throws IOException {
-        System.out.println("POST RECEIVED ______>"+ jsonApproved.get(1));
+        //System.out.println("POST RECEIVED ______>"+ jsonApproved.get(1));
         service.synonymousUpdate(jsonApproved);
         service.refreshList();
         List<Synonymus> listSyn = service.synonymusToApprove();

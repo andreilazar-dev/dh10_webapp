@@ -28,7 +28,7 @@
     <div class="row">
         <div class="col-md ">
             <label class="h4">Sinonimi senza soluzione: <label style="color:red">${numSyn} </label></label>
-            <div class="btn-group float-right"">
+            <div class="btn-group float-right">
              <a href="reserve">
    				<input type="button" value="Home" class="btn btn-primary float-right" style="margin-left:5px; "/>
 			</a>
