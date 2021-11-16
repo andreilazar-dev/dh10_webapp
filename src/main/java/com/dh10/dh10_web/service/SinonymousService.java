@@ -4,6 +4,7 @@ import com.dh10.stringchecker.model.beans.Synonymus;
 import com.dh10.stringchecker.model.dao.Dao;
 import com.dh10.stringchecker.model.dao.SynonymusDao;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.HashMap;
@@ -42,7 +43,7 @@ public class SinonymousService {
         List<Synonymus> toApprove = new ArrayList<>();
 
         for (Synonymus tmp : completeList) {
-            if (tmp.getStatus() == 1) {
+            if (tmp.getStatus() == 1 && tmp.getAlgorithm_name() != null) {
                 toApprove.add(tmp);
             }
         }
@@ -66,21 +67,32 @@ public class SinonymousService {
 
     public Map<String,Integer> getAlgorithmStats(){
         Map<String,Integer> stats = new HashMap<>();
-
+        String name;
         for (Synonymus tmp : completeList) {
 
-            if (stats.containsKey(tmp.getAlgorithm_name())){
-                Integer value = stats.get(tmp.getAlgorithm_name());
-                stats.put(tmp.getAlgorithm_name(), value + 1);
+            name = tmp.getAlgorithm_name() == null ?"Non trovati":tmp.getAlgorithm_name();
+            if (stats.containsKey(name)){
+
+                Integer value = stats.get(name);
+                stats.put(name, value + 1);
             }
             else {
-                stats.put(tmp.getAlgorithm_name(),1);
+                stats.put(name,1);
             }
         }
+        stats.remove("");
         return  stats;
     }
-    public void synonymousUpdate(List<Synonymus> synonymuses) {
-        synonymusDao.update(synonymuses);
+    public void synonymousUpdate(List<String> synonymuses) {
+
+        List<Synonymus> update = new ArrayList<>();
+        for (Synonymus tmp : completeList) {
+            if(synonymuses.contains(tmp.getSynonymus_name())){
+                tmp.setStatus(0);
+                update.add(tmp);
+            }
+        }
+        synonymusDao.update(update);
     }
     
     public int countToAssociate() {
