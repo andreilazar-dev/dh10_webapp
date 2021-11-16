@@ -1,15 +1,13 @@
 package com.dh10.dh10_web.service;
 
+import com.dh10.access.model.beans.User;
+import com.dh10.access.model.dao.UserDao;
 import com.dh10.stringchecker.model.beans.Synonymus;
 import com.dh10.stringchecker.model.dao.Dao;
 import com.dh10.stringchecker.model.dao.SynonymusDao;
-
-import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Set;
 import java.util.Map;
 
 public class SinonymousService {
@@ -129,9 +127,11 @@ public class SinonymousService {
     	}
     	return countries;
     }
-   
-    
-    
+
+    private com.dh10.access.model.dao.Dao<User> userDao = new UserDao();
+    public User getUser(String id){
+        return userDao.get(id);
+    }
     
     
     

@@ -6,10 +6,6 @@ import com.dh10.access.model.dao.UserDao;
 import com.dh10.dh10_web.model.LoginBean;
 import org.springframework.validation.Errors;
 
-import java.util.Optional;
-
-import org.springframework.validation.Errors;
-
 public class LoginCheck {
 
     private Dao<User> userDao = new UserDao();
@@ -25,13 +21,8 @@ public class LoginCheck {
         	//errors.rejectValue("password","password.invalid");
         	return false;
         }
-        
         //aggiungere errore
-       
-       
-        
         return true;
-        
     }
 
     public String getNameOfUser(LoginBean loginBean){

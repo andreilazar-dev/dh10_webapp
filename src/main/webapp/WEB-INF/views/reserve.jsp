@@ -19,11 +19,38 @@
 
 <!-- css ekternal -->
 <link rel="stylesheet" href="resources/css/style.css">
-<title>Collapsible Bootstrap Sidebar Navigation Example</title>
+<title>Administrator Area</title>
 <style>
-    body { background-color: #fafafa; }
+    .card{
+        transition: all 0.3s ease-in;
+    }
+    .card:hover{
+        transform: translateY(-8px);
+    }
 </style>
 
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+            ${html}
+        ]);
+
+        var options = {
+            title: ' ',
+            pieHole: 0.4,
+        };
+
+
+        var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+
+        chart.draw(data, options);
+    }
+</script>
 
 
 </head>
@@ -33,48 +60,113 @@
 <div class="wrapper">
     <nav id="sidebar">
         <div class="sidebar-header">
-            <h3>jQueryScript</h3>
+            <h3>Hello! ${userName} </h3>
         </div>
         <ul class="lisst-unstyled components">
-            <p>Menu List</p>
             <li class="active">
-                <a href="#foodSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">DropDown Menu</a>
+                <a href="#foodSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Info</a>
                 <ul class="collapse lisst-unstyled" id="foodSubmenu">
-                    <li><a href="#">jQuery</a></li>
-                    <li><a href="#">Script</a></li>
-                    <li><a href="#">Net</a></li>
+                    <li><a href="#">Name: ${name}</a></li>
+                    <li><a href="#">Surname: ${surname}</a></li>
                 </ul>
             </li>
             <li>
-                <a href="#">Contact</a>
-            </li>
-            <li>
-                <a href="#">About</a>
+                <div class="container">
+                    <div class="row">
+                        <div class="col text-center">
+                            <button type="submit" class="btn btn-warning" value="/signup" id="submit">Sign up</button>
+                        </div>
+                    </div>
+                </div>
             </li>
         </ul>
     </nav>
 
     <div id="content">
-        <nav class="navbar navbar-expand-lg">
-            <div class="container-fluid">
-                <button type="button" id="sidebarCollapse" class="btn btn-dark">
-                    <i class="fas fa-bars"></i><span> Toggle Sidebar</span>
-                </button>
+
+        <div class="container">
+            <div class="row mt-5">
+                <nav class="navbar navbar-expand-lg">
+                    <div class="container-fluid">
+                        <button type="button" id="sidebarCollapse" class="btn btn-dark">
+                            <i class="fas fa-bars"></i><span> </span>
+                        </button>
+                    </div>
+                </nav>
+                <div class="col-md">
+                    <p class="h1">Statistica algoritmi:</p>
+                </div>
             </div>
-        </nav>
-        <br><br>
-        <div id="carbon-block" class="my-3"></div>
-        <div class="my-3"><script type="text/javascript"><!--
-        google_ad_client = "ca-pub-2783044520727903";
-        /* jQuery_demo */
-        google_ad_slot = "2780937993";
-        google_ad_width = 728;
-        google_ad_height = 90;
-        //-->
-        </script>
-            <script type="text/javascript"
-                    src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
-            </script></div>
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-3 align-content-md-center">
+                    <div id="donutchart" style="width: 800px; height: 400px;"></div>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+            <div class="row align-content-md-center mt-2">
+                <div class="col-md mt-3">
+
+                    <div class="card text-center shadow-lg">
+
+                        <div class="card-body">
+                            <h5 class="card-title">Sinonimi da approvare</h5>
+                            <p class="card-text ">Numero di sinonimi da approvare
+                            <h1 class="card-text" style="color:orange; font-weight: bold;">${countToApprove}</h1></p>
+                            <form:form id="visSynA" modelAttribute="synonymusapprove" action="fetchApprove" method="post">
+                                <p><input type="submit" value="GO!" class="btn btn-primary"></p>
+                            </form:form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md mt-3">
+                    <div class="card text-center shadow-lg" >
+
+                        <div class="card-body">
+                            <h5 class="card-title">Sinonimi senza soluzione</h5>
+                            <p class="card-text">Numero di sinonimi senza soluzione
+                            <h1 class="card-text" style="color: red; font-weight: bold;">${countToAssociate}</h1></p>
+                            <form:form id="visSynNF" modelAttribute="synonymousnotfound" action="fetchNoFound" method="post">
+                                <p><input type="submit" value="GO!" class="btn btn-primary"></p>
+                            </form:form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md mt-3">
+                    <div class="card text-center shadow-lg" >
+
+                        <div class="card-body">
+                            <h5 class="card-title">Sinonimi</h5>
+                            <p class="card-text">Numero totale di sinonimi
+                            <h1 class="card-text" style="color:green; font-weight: bold;">${countAll}</h1></p>
+                            <form:form id="visSynF" modelAttribute="synonymous" action="fetch" method="post">
+                                <p><input type="submit" value="GO!" class="btn btn-primary"></p>
+                            </form:form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row align-content-md-center mt-4">
+                <div class="col-md mt-3">
+                    <div class="card text-center shadow-lg" >
+
+                        <div class="card-body">
+                            <h5 class="card-title">Nazioni</h5>
+                            <p class="card-text">Numero totale di nazioni
+                            <h1 class="card-text" style="color:green; font-weight: bold;">${countCountry}</h1></p>
+                            <form:form id="visSynF" modelAttribute="synonymous" action="fetchCountry" method="post">
+                                <p><input type="submit" value="GO!" class="btn btn-primary"></p>
+                            </form:form>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+
 
     </div>
 
@@ -92,34 +184,6 @@
             $("#sidebar").toggleClass('active');
         });
     });
-</script>
-<script type="text/javascript">
-
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-36251023-1']);
-    _gaq.push(['_setDomainName', 'jqueryscript.net']);
-    _gaq.push(['_trackPageview']);
-
-    (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-
-</script>
-<script>
-    try {
-        fetch(new Request("https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js", { method: 'HEAD', mode: 'no-cors' })).then(function(response) {
-            return true;
-        }).catch(function(e) {
-            var carbonScript = document.createElement("script");
-            carbonScript.src = "//cdn.carbonads.com/carbon.js?serve=CK7DKKQU&placement=wwwjqueryscriptnet";
-            carbonScript.id = "_carbonads_js";
-            document.getElementById("carbon-block").appendChild(carbonScript);
-        });
-    } catch (error) {
-        console.log(error);
-    }
 </script>
 </body>
 </html>

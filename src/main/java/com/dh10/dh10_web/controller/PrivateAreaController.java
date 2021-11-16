@@ -1,5 +1,6 @@
 package com.dh10.dh10_web.controller;
 
+import com.dh10.access.model.beans.User;
 import com.dh10.dh10_web.service.SinonymousService;
 import com.dh10.stringchecker.model.beans.Synonymus;
 import org.springframework.stereotype.Controller;
@@ -22,6 +23,9 @@ public class PrivateAreaController {
     @RequestMapping(value = "/reserve",method = RequestMethod.GET)
     public String init(Model model) {
 
+        User usersession = service.getUser((String) model.getAttribute("userName"));
+        model.addAttribute("name",usersession.getFirstName());
+        model.addAttribute("surname",usersession.getLastName());
         model.addAttribute("countAll", service.countAll()); 
         model.addAttribute("countToApprove", service.countToApprove());
         model.addAttribute("countToAssociate", service.countToAssociate());
