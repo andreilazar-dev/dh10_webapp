@@ -48,6 +48,7 @@ public class LoginController {
             return "redirect:home";
         }*/
 
+        model.addAttribute("userName",loginBean.getUserId());
         return "redirect:home";
          
     }

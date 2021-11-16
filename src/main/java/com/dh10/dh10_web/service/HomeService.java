@@ -6,7 +6,7 @@ import com.dh10.access.model.dao.UserDao;
 
 public class HomeService {
 
-    private Dao<User> userDao = new UserDao();
+    private final Dao<User> userDao = new UserDao();
 
     public User getUser (String id){
         return userDao.get(id);

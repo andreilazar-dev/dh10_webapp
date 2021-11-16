@@ -52,7 +52,7 @@
       <a class="nav-link" href="#">Country Explorer</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#">Profile</a>
+      <a class="nav-link" href="profile">Profile</a>
     </li>
      <li>
      <form:form   action="logout" >
