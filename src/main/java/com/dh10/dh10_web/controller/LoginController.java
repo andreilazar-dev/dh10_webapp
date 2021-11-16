@@ -37,17 +37,18 @@ public class LoginController {
         
          
         new LoginValidator().validate(loginBean,result);
-       
 
-        if(result.hasErrors()){
+
+      /*  if(result.hasErrors()){
         	model.addAttribute("loginBean",loginBean);
             return "login";
 
         }else {
             model.addAttribute("userName", loginBean.getUserId());
             return "redirect:home";
-        }
-       
+        }*/
+
+        return "redirect:home";
          
     }
 }
