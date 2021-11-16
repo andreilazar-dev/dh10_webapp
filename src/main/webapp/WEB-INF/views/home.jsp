@@ -103,8 +103,8 @@
 
 
 <div class="jumbotron text-center">
-  <h1  >WELCOME TO DH10 WEBAPP</h1>
-  <h4> Are you ready to explore dh10 world? </h4>
+  <h1  >WELCOME TO DH10 WEB APPLICATION</h1>
+  <h4> Are you ready to explore dh10 world? &#128187 </h4>
   <p> In this web application you can have fun playing our videogams or else you can browse some informations
   about nations in the countries explorer section. i won't to spoil more, so jump in the site! </p> 
 </div>
@@ -164,7 +164,7 @@ therefore we have tried to include
 <footer class=" text-center text-lg-start bg-dark ">
   <!-- Copyright -->
   <div class="text-center p-3 text-white" >
-    © 2020 Copyright:
+    © 2021 Copyright: DH10 
   </div>
   <!-- Copyright -->
 </footer>
