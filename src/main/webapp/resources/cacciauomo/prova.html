@@ -1,0 +1,78 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <title>Caccia all'uomo</title>
+  </head>
+
+  <body onload="gameLoop();" onkeydown="moveSelection(event)" onkeyup="moveSelection(event)" onkeypress="checkKeyPress(event)"  onmousemove="myFunction(event)" bgcolor='yellow'>
+  
+
+ 
+  
+
+  <h1 >Caccia all'uomo: </h1>
+
+  <div id="informazioni">
+  <div id="parteenergia">
+  Energia: <div id="sfondoBarra"><div id="barraenergia"><div id="energia"></div></div></div>
+  </div>
+  <div id="partefuga">
+  Tempo di fuga:  <label id="minutes">00</label>:<label id="seconds">00</label>
+  </div>
+  <div>
+   Pillole prese:  <label id="pilloleprese">00</label>
+  </div>
+  </div>
+
+  <div id="mondo">
+    <img id="image1" src="img1/omino.jpg" style="position: absolute; z-index: -1; left: 260; right: 260; top: 21; bottom: auto; " height="18" width="18">
+  </div>
+
+
+  <audio>
+    <source id="pu" src="sound/powerup.mp3" type="audio/mp3">
+  </audio>
+  <audio>
+    <source id="pm" src="sound/prendimoneta.mp3" type="audio/mp3">
+  </audio>
+<audio>
+  <source id="p0" src="sound/soft_punch.wav" type="audio/wav">
+</audio>  
+<audio>
+  <source id="p1" src="sound/weak_blow.wav" type="audio/wav">
+</audio>
+<audio>
+  <source id="p2" src="sound/fast_blow.wav" type="audio/wav">
+</audio>  
+<audio>
+  <source id="p3" src="sound/punch.wav" type="audio/wav">
+</audio>  
+<audio>
+  <source id="p4" src="sound/kickomi.mp3" type="audio/mp3">
+</audio>
+<audio>
+  <source id="su" src="sound/speedup.mp3" type="audio/mp3">
+</audio> 
+<audio>
+  <source id="gb" src="sound/glassbrk.mp3" type="audio/mp3">
+</audio> 
+ 
+<audio>
+  <source id="fs" src="sound/finalscream.mp3" type="audio/mp3">
+</audio> 
+<audio>
+  <source id="sp" src="sound/rami.mp3" type="audio/mp3">
+</audio> 
+
+<div id="gameover">
+  <div id="contenutogo">
+    <p>GAME OVER</p>
+    <p>Punteggio finale:  <label id="punteggio">00</label></p>
+  </div>
+</div>
+  <script type="text/javascript" src="js/mappa.js"></script>
+<script type="text/javascript" src="js/movimento.js"></script>
+</body>
+  
+</html>

@@ -1,0 +1,67 @@
+body{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+h1{
+    font-size:27px;
+}
+
+#informazioni {
+    z-index: 1;
+    background-color: rgba(255, 255, 255,0.7);
+    border-width: 3px;
+    border-style: solid;
+    border-color: rgba(255,255,255, 0.7);
+    border-radius: 5px;
+    padding: 13px;
+    width: max-content;
+} 
+
+img {
+    z-index: -1;
+}
+
+#parteenergia{
+    padding-bottom: 5px;
+}
+
+#energia{text-align: center;
+    width: 100px;}
+
+#sfondoBarra {   
+    width: 100px;  
+    height: 20px;    
+    background-color: rgb(17, 17, 17); 
+    border-radius: 3px; 
+    color:white;
+    display: inline-block; 
+}
+#barraenergia {  
+    width: 100px;
+    background-color: #4CAF50; 
+    height: 20px; 
+    border-radius: 3px;
+}
+
+#partefuga{
+    padding-bottom: 5px;
+}
+
+#gameover{
+    z-index: 1;
+    background-color: rgba(255, 255, 255,0.7);
+    border-width: 3px;
+    border-style: solid;
+    border-color: rgba(255,255,255, 0.7);
+    border-radius: 5px;
+    padding: 13px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -100px 0 0 -150px;
+    height: 90px;
+    width: 250px;;
+    text-align: center;
+    visibility: hidden;
+}
