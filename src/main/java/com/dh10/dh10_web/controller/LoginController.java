@@ -33,12 +33,8 @@ public class LoginController {
             model.addAttribute("userName",loginBean.getUserId());
             return "redirect:reserve";
         }
-
-        //Save id in session
-        model.addAttribute("userName", loginBean.getUserId());
-        return "home";
+  
         
-        /*
          
         new LoginValidator().validate(loginBean,result);
        
@@ -49,9 +45,9 @@ public class LoginController {
 
         }else {
             model.addAttribute("userName", loginBean.getUserId());
-            return "home";
+            return "redirect:home";
         }
-        */
+       
          
     }
 }
