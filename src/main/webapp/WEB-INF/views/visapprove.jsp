@@ -27,9 +27,15 @@
     <div class="row">
         <div class="col-md">
             <p class="h4">Sinonimi da approvare: <label style="color:orange">${numSyn} </label>
+            <div class="btn-group float-right">
                 <a href="reserve">
-                    <input type="button" value="Home" class="btn btn-primary float-right"/>
-                </a></p>
+                    <input type="button" value="Home" class="btn btn-primary float-right" style="margin-left:5px; "/>
+                </a>
+                <form:form id="visSynRNF" modelAttribute="refreshtoapprove" action="refreshtoapprove" method="post">
+                    <input type="submit" value="Refresh" class="btn btn-success float-right" style="margin-left:5px;"/>
+                </form:form>
+            </div>
+            </p>
         </div>
     </div>
     <div class="row mt-3">
@@ -75,7 +81,7 @@
     confirm.onclick = () => {
         let approvedlist = [];
         for (i = 0; i < approved.length; i++) {
-            if (approved[i].checked === true)approvedlist.push($(approved[i]).val());
+            if (approved[i].checked === true) approvedlist.push($(approved[i]).val());
         }
         fetch("fetchApprove/approved", {
             method: "POST",
@@ -83,6 +89,7 @@
             body: JSON.stringify(approvedlist) //parse json string into JS object)
         }).then(res => {
             console.log("Request complete! response:", res);
+            location.reload();
         });
     }
 </script>
