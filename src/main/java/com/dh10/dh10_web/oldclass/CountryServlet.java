@@ -1,4 +1,4 @@
-package com.dh10.dh10_web;
+package com.dh10.dh10_web.oldclass;
 
 import com.dh10.stringchecker.CountryChecker;
 import com.dh10.stringchecker.StringChecker;
@@ -15,7 +15,7 @@ public class CountryServlet extends HttpServlet {
         String message = "non trovata corrispondeza";
         StringChecker countrycheck = new CountryChecker();
         String country = request.getParameter("country");
-        if(countrycheck.find_standard(country))
+        if(countrycheck.find_standard(country)!=null)
             message = "Nazione Trovata";
         message = "non trovata corrispondeza";
         PrintWriter writer = response.getWriter();
