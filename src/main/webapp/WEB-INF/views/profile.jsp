@@ -66,7 +66,7 @@
             <a class="nav-link" href=<%=request.getContextPath() + "/resources/gameArea.html"%>>Game area</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Country Explorer</a>
+            <a class="nav-link" href="countryexplorer">Country Explorer</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="profile">Profile</a>

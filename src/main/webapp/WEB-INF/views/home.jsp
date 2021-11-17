@@ -149,8 +149,9 @@ therefore we have tried to include
        <img class="card-img-top" src=<%=request.getContextPath() + "/resources/img/bandiere.png"%> alt="Card image" style="width:100%">
        <div class="card-body">
          <h4 class="card-title">Country Explorer</h4>
-      <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
-      <a href="#" class="btn btn-primary">Country Explorer</a>
+      <p class="card-text">
+In this section you can explore the world. <br> I mean that you can discover the various geographical characteristics of each country</p>
+      <a href= <%=request.getContextPath() + "/countryexplorer"%> class="btn btn-primary">Country Explorer</a>
     </div>
       </div>
     </div>
@@ -164,7 +165,7 @@ therefore we have tried to include
 <footer class=" text-center text-lg-start bg-dark ">
   <!-- Copyright -->
   <div class="text-center p-3 text-white" >
-    ï¿½ 2021 Copyright: DH10 
+     © 2021 Copyright: DH10 
   </div>
   <!-- Copyright -->
 </footer>
