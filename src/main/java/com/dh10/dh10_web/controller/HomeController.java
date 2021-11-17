@@ -40,4 +40,8 @@ public class HomeController {
         model.addAttribute("Country",user.getCountry());
         return "profile";
     }
+	    @RequestMapping(value = "/countryexplorer",method = RequestMethod.GET)
+	    public String init(Model model) {
+	    	        return "countryexplorer";
+	    }
 }

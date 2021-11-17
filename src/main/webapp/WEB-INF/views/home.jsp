@@ -49,7 +49,7 @@
       <a class="nav-link" href=<%=request.getContextPath() + "/resources/gameArea.html"%>>Game Zone</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#">Country Explorer</a>
+      <a class="nav-link" href="/dh10_web/countryexplorer">Country Explorer</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" href="profile">Profile</a>
@@ -164,7 +164,7 @@ therefore we have tried to include
 <footer class=" text-center text-lg-start bg-dark ">
   <!-- Copyright -->
   <div class="text-center p-3 text-white" >
-    © 2021 Copyright: DH10 
+    ï¿½ 2021 Copyright: DH10 
   </div>
   <!-- Copyright -->
 </footer>
