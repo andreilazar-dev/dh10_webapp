@@ -1,0 +1,108 @@
+
+body{
+    background-color:#2C3E50;
+
+}
+
+
+h1{
+    text-align: center;
+    color: white;
+}
+
+h2{
+    color: orange;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+.titoli_header{
+    color: orange;
+    padding: 30px;
+}
+
+
+
+#sfondo {
+    background:red;
+    width:200px;
+    height:30px;
+}
+#energia {
+    background:green;
+    width:200px;
+    height:30px;
+}
+
+#myProgress {
+    width: 100%;
+    width:200px;
+    background-color: #ddd;
+  }
+  
+  #myBar {
+    width: 10%;
+    width:200px;
+    height: 30px;
+    background-color: #04AA6D;
+    text-align: center;
+    line-height: 30px;
+    color: white;
+}
+
+
+.title:hover{
+    background:orange;
+}
+
+.linea{
+    border-top: 5px solid orange;
+}
+
+
+
+.game_container{
+    max-width:1200px; 
+}
+
+.game_area{
+  padding-left: 30px;
+  width:65%;
+  float:left;
+}
+
+.game_area h1{
+    text-align: left;
+    color: orange;
+    font-size: 40px;
+}
+
+
+.game_stats{
+    width:10%;
+    float:left;
+}
+
+.titolo_energia{
+    padding-top: 20px;
+    padding-bottom: 15px;
+}
+
+.sotto{
+    height:50px;
+    background:lightgray;
+    text-align: center;
+}
+
+.footer{
+    padding-top: 20px;
+}
+
+
+#livello{
+    font-size: large;
+    color: lightgreen;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+
+

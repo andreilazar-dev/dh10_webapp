@@ -11,8 +11,26 @@
      <!-- Bootstrap Font Icon CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 <title>Country explorer</title>
+
+<style>
+	body{
+   	 background-color: lightgrey ;
+
+	}
+	
+hr {
+ border: 2px solid orange;
+}
+
+.mappa{
+	padding-left:15px;
+}
+	
+</style>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js">
-  </script>
+ </script>
+ 
+ 
   <!-- Script google map -->
    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   
@@ -71,14 +89,14 @@
   <!-- Brand/logo -->
   <a class="navbar-brand" href="#">
  
-   <img src= <%=request.getContextPath() + "/resources/img/logoTr.png"%> alt="logo" style="width:40px;" />
+   <img src= <%=request.getContextPath() + "/resources/img/logoTr.jpg"%> alt="logo" style="width:40px;" />
  
   </a>
 
     <!-- Links -->
     <ul class="navbar-nav">
         <li class="nav-item">
-            <a class="nav-link" href="#">Home Page</a>
+            <a class="nav-link" href=<%=request.getContextPath() + "/home"%>>Home Page</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href=<%=request.getContextPath() + "/resources/gameArea.html"%>>Game Zone</a>
@@ -98,12 +116,13 @@
 </nav>
 
  <div class="container-fluid p-5  text-white text-center" style="background-color:orange">
-        <h1>Visualizzatore nazioni 🌍</h1>
+        <h1>Country Explorer 🌍</h1>
  </div>
  <div class= "container mt-5">
  <div class="row">
         <div class="col-md">
-            <p class="h2">Seleziona la nazione da visualizzare:</p>
+            <p class="h2">
+Select the country:</p>
         </div>
  </div>
  <div class="row mt-3">
@@ -121,22 +140,41 @@
  	<div class="col-md">
  		
 	           <div class="d-inline"><label class="h2"> {{paesescelto.name}}</label> </div><br>
-	           <div class="d-inline"><label class="h5">Capitale: </label> <label class="h3">  {{paesescelto.capital}}</label></div><br>
-	           <div class="d-inline"><label class="h5">Continente: </label> <label class="h3"> {{paesescelto.region}}</label></div><br>
-	           <div class="d-inline"><label class="h5">Sub-Continente: </label>  <label class="h3">  {{paesescelto.subregion}}</label></div><br>
-	           <div class="d-inline"><label class="h5">Superficie: </label> <label class="h3"> {{paesescelto.area}} Kmq</label></div><br>
-	           <div class="d-inline"><label class="h5">Popolazione: </label> <label class="h3"> {{paesescelto.population}} of {{paesescelto.demonym}}</label></div><br>
-	           <div class="d-inline"><label class="h5">Moneta: </label>  <label class="h3">  {{paesescelto.currencies[0].name}}</label></div><br>
+	           <div class="d-inline"><label class="h5">Capital city: </label> <label class="h3">  {{paesescelto.capital}}</label></div><br>
+	           <div class="d-inline"><label class="h5">Continent: </label> <label class="h3"> {{paesescelto.region}}</label></div><br>
+	           <div class="d-inline"><label class="h5">Sub-Continent: </label>  <label class="h3">  {{paesescelto.subregion}}</label></div><br>
+	           <div class="d-inline"><label class="h5">Surface: </label> <label class="h3"> {{paesescelto.area}} Kmq</label></div><br>
+	           <div class="d-inline"><label class="h5">Population: </label> <label class="h3"> {{paesescelto.population}} of {{paesescelto.demonym}}</label></div><br>
+	           <div class="d-inline"><label class="h5">Currency: </label>  <label class="h3">  {{paesescelto.currencies[0].name}}</label></div><br>
 	</div>
 	
  </div>
+ 
+ <hr>
+ 
+ <div class= "mappa">
  <div class="row mt-3">
-		<div class="col-md"><label class="h3"> Dove si trova? </label> </div>
+		<div class="col-md"><label class="h3"> Where is the country situated? </label> </div>
 	</div>
 	<div class="row mt-2" ng-change="uc.mappa(selectedItem)">
 		<div id="regions_div" style="width: 900px; height: 500px;">{{draw}}</div>
 	</div>
  </div>
+ </div>
+ 
+<br>
+<br>
+<br>
+
+
+<footer class=" text-center text-lg-start bg-dark ">
+  <!-- Copyright -->
+  <div class="text-center p-3 text-white" >
+     © 2021 Copyright: DH10 
+  </div>
+  <!-- Copyright -->
+</footer>
+
 
 </body>
 </html>
