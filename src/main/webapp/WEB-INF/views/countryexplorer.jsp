@@ -74,22 +74,27 @@
    <img src= <%=request.getContextPath() + "/resources/img/logoTr.png"%> alt="logo" style="width:40px;" />
  
   </a>
-  
-  <!-- Links -->
-  <ul class="navbar-nav">
-    <li class="nav-item">
-      <a class="nav-link" href="/home">Home Page</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href=<%=request.getContextPath() + "/resources/gameArea.html"%>>Game area</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Country Explorer</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Profile</a>
-    </li>
-  </ul>
+
+    <!-- Links -->
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" href="#">Home Page</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href=<%=request.getContextPath() + "/resources/gameArea.html"%>>Game Zone</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="countryexplorer">Country Explorer</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="profile">Profile</a>
+        </li>
+        <li>
+            <form:form   action="logout" >
+                <input type="submit" value="logout" class="btn btn-danger">
+            </form:form>
+        </li>
+    </ul>
 </nav>
 
  <div class="container-fluid p-5  text-white text-center" style="background-color:orange">
