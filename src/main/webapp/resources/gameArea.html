@@ -12,21 +12,25 @@
    	 background-color: lightgrey ;
 
 	}
+	
+	 h1 {
+  	color : orange !important;
+     }
    </style>
 </head>
 <body>
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
   <!-- Brand/logo -->
-  <a class="navbar-brand" href="#">
+  <a class="navbar-brand" href="#"  onclick="history.go(-1);">
  
-   <img src= "img/logo.jpg" alt="logo" style="width:40px;" />
+   <img src= "img/logoTr.jpg" alt="logo" style="width:40px;" />
  
   </a>
   
   <!-- Links -->
   <ul class="navbar-nav">
     <li class="nav-item">
-      <a class="nav-link" href="home.html">Home Page</a>
+      <a class="nav-link" href="#" onclick="history.go(-1);">Home Page</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" href="gameArea.html">Game area</a>
@@ -40,7 +44,61 @@
   </ul>
 </nav>
 
+
+<div class="jumbotron text-center">
+  <h1  >WELCOME TO OUR GAME-ZONE </h1>
+  <h4 >Here you can play our videogames &#128377</h4>
+  <p>
+   Each game was developed individually. The aim is to show the skills acquired in the course: in particular,
+    html - CSS - javascript - ES6 features were used.
+  </p> 
+</div>
+
 <a href="giocoDelga/gioco.html">gioco delga</a>
 
+<div class="container">
+  <h2>Main works</h2>
+  <p>Here there are our main works that will explain the various skills and technology that we learned in the course.</p>
+  <p>we decided to focus our web application to three different areas and you can find theese down below</p>
+  <p><strong>Note:</strong> we work was equally divided in 4 part as many developer this webapp has</p>
+  <div class="card-deck">
+  <!-- carta uno -->
+    <div class="card" style="width:400px">
+      <div class="card-body text-center">
+       <img class="card-img-top" src="img/logo_carosello.png" alt="Card image" style="width:100%">
+       <div class="card-body">
+         <h4 class="card-title">John Doe</h4>
+      <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
+      <a href="#" class="btn btn-primary">See Profile</a>
+    </div>
+      </div>
+    </div>
+   
+     <div class="card" style="width:400px">
+      <div class="card-body text-center">
+       <img class="card-img-top" src="img/logo_carosello.png" alt="Card image" style="width:100%">
+       <div class="card-body">
+         <h4 class="card-title">John Doe</h4>
+      <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
+      <a href="#" class="btn btn-primary">See Profile</a>
+    </div>
+      </div>
+    </div>
+    
+     <div class="card" style="width:400px">
+      <div class="card-body text-center">
+       <img class="card-img-top" src="img/logo_carosello.png" alt="Card image" style="width:100%">
+       <div class="card-body">
+         <h4 class="card-title">John Doe</h4>
+      <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
+      <a href="#" class="btn btn-primary">See Profile</a>
+    </div>
+      </div>
+    </div>
+</div>
+</div>
+
+
 </body>
+
 </html>

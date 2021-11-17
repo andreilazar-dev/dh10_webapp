@@ -33,25 +33,23 @@ public class LoginController {
             model.addAttribute("userName",loginBean.getUserId());
             return "redirect:reserve";
         }
-
-        //Save id in session
-        model.addAttribute("userName", loginBean.getUserId());
-        return "home";
+  
         
-        /*
          
         new LoginValidator().validate(loginBean,result);
-       
 
-        if(result.hasErrors()){
+
+      /*  if(result.hasErrors()){
         	model.addAttribute("loginBean",loginBean);
             return "login";
 
         }else {
             model.addAttribute("userName", loginBean.getUserId());
-            return "home";
-        }
-        */
+            return "redirect:home";
+        }*/
+
+        model.addAttribute("userName",loginBean.getUserId());
+        return "redirect:home";
          
     }
 }
