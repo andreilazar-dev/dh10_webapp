@@ -41,7 +41,7 @@ public class HomeController {
         return "profile";
     }
 	    @RequestMapping(value = "/countryexplorer",method = RequestMethod.GET)
-	    public String init(Model model) {
+	    public String countryexplorer(Model model) {
 	    	        return "countryexplorer";
 	    }
 }

@@ -49,7 +49,7 @@
       <a class="nav-link" href=<%=request.getContextPath() + "/resources/gameArea.html"%>>Game Zone</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="/dh10_web/countryexplorer">Country Explorer</a>
+      <a class="nav-link" href="countryexplorer">Country Explorer</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" href="profile">Profile</a>
