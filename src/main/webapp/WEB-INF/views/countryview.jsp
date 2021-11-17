@@ -79,7 +79,7 @@
 	           <div class="d-inline"><label class="h4">Sub-Continente: </label>  {{state.subregion}}</div><br>
 	           <div class="d-inline"><label class="h4">Superficie: </label> {{state.area}} Kmq</div><br>
 	           <div class="d-inline"><label class="h4">Popolazione: </label> {{state.population}} di {{state.demonym}}</div><br>
-	           <div class="d-inline"><label class="h4">Moneta: </label>{{state.currencies}}</div><br>
+	           <div class="d-inline"><label class="h4">Moneta: </label> {{state.currencies[0].name}}</div><br>
 	           
 	           </p>
 	        </div>

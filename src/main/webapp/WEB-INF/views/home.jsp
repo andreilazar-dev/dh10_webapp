@@ -46,10 +46,10 @@
       <a class="nav-link" href="#">Home Page</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href=<%=request.getContextPath() + "/resources/gameArea.html"%>>Game area</a>
+      <a class="nav-link" href=<%=request.getContextPath() + "/resources/gameArea.html"%>>Game Zone</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#">Country Explorer</a>
+      <a class="nav-link" href="/dh10_web/countryexplorer">Country Explorer</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" href="profile">Profile</a>
@@ -79,13 +79,13 @@
       </div>   
     </div>
     <div class="carousel-item">
-      <img src=<%=request.getContextPath() + "/resources/img/logo_carosello.png"%> alt="GameAreaImg" width="1100" height="500">
+      <img src=<%=request.getContextPath() + "/resources/img/logo2.png"%> alt="GameAreaImg" width="1100" height="500">
       <div class="carousel-caption">
        
       </div>   
     </div>
     <div class="carousel-item">
-      <img src=<%=request.getContextPath() + "/resources/img/logo_carosello.png"%> alt="CountryImg" width="1100" height="500">
+      <img src=<%=request.getContextPath() + "/resources/img/logoNero.png"%> alt="CountryImg" width="1100" height="500">
       <div class="carousel-caption">
  
       </div>   
@@ -104,7 +104,7 @@
 
 <div class="jumbotron text-center">
   <h1  >WELCOME TO DH10 WEB APPLICATION</h1>
-  <h4> Are you ready to explore dh10 world? &#128187 </h4>
+  <h4> Are you ready to explore DH10 world? &#128187 </h4>
   <p> In this web application you can have fun playing our videogams or else you can browse some informations
   about nations in the countries explorer section. i won't to spoil more, so jump in the site! </p> 
 </div>
@@ -146,11 +146,11 @@ therefore we have tried to include
     
      <div class="card" style="width:400px">
       <div class="card-body text-center">
-       <img class="card-img-top" src="img/logo_carosello.png" alt="Card image" style="width:100%">
+       <img class="card-img-top" src=<%=request.getContextPath() + "/resources/img/bandiere.png"%> alt="Card image" style="width:100%">
        <div class="card-body">
-         <h4 class="card-title">John Doe</h4>
+         <h4 class="card-title">Country Explorer</h4>
       <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
-      <a href="#" class="btn btn-primary">See Profile</a>
+      <a href="#" class="btn btn-primary">Country Explorer</a>
     </div>
       </div>
     </div>
@@ -164,7 +164,7 @@ therefore we have tried to include
 <footer class=" text-center text-lg-start bg-dark ">
   <!-- Copyright -->
   <div class="text-center p-3 text-white" >
-    © 2021 Copyright: DH10 
+    ï¿½ 2021 Copyright: DH10 
   </div>
   <!-- Copyright -->
 </footer>
