@@ -73,9 +73,9 @@
             <li>
                 <div class="container">
                     <div class="row">
-                        <div class="col text-center">
-                            <button type="submit" class="btn btn-warning" value="/signout" id="submit">Sign out</button>
-                        </div>
+                        <form:form   action="logout" >
+                            <button type="submit" class="btn btn-warning" value="signout" id="submit">Sign out</button>
+                        </form:form>
                     </div>
                 </div>
             </li>
