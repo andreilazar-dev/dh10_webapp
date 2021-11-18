@@ -74,7 +74,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col text-center">
-                            <button type="submit" class="btn btn-warning" value="/signup" id="submit">Sign up</button>
+                            <button type="submit" class="btn btn-warning" value="/signout" id="submit">Sign out</button>
                         </div>
                     </div>
                 </div>

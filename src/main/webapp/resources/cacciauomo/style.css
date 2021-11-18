@@ -60,8 +60,22 @@ img {
     top: 50%;
     left: 50%;
     margin: -100px 0 0 -150px;
-    height: 90px;
+   height: max-content;
     width: 250px;;
     text-align: center;
     visibility: hidden;
 }
+
+#btnback {
+	background-color:#0275d8;
+	border-radius:5px;
+	padding:10px;
+	color:white;
+	border: none;
+}
+#btnback:hoover {
+	background-color:#50abfe;
+	cursor:pointer;
+	
+}
+

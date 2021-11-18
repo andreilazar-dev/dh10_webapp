@@ -1,18 +1,20 @@
 package com.dh10.dh10_web.controller;
 
 import com.dh10.access.model.beans.User;
+import com.dh10.dh10_web.model.Manulinsert;
+import com.dh10.dh10_web.model.WrapperManualInsert;
 import com.dh10.dh10_web.service.SinonymousService;
 import com.dh10.stringchecker.model.beans.Synonymus;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.DeserializationFeature;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 @Controller
 @SessionAttributes("userName")
@@ -69,6 +71,28 @@ public class PrivateAreaController {
         int n= listSyn.size();
         model.addObject("listSyn", listSyn);
         model.addObject("numSyn", n);
+        model.setViewName("visnofound");
+        return model;
+    }
+
+    @RequestMapping(value = "/fetchNoFound/mod", method = RequestMethod.POST)
+    public ModelAndView listSynonymusNotFoundPost(ModelAndView model, @RequestBody String json) throws IOException {
+        System.out.println("--->Post received:"+json);
+
+        ObjectMapper mapper = new ObjectMapper();
+        mapper.enable(DeserializationFeature.ACCEPT_EMPTY_STRING_AS_NULL_OBJECT);
+        try {
+            // convert JSON array to Java List
+            List<Manulinsert> list = mapper.readValue(json, new TypeReference<List<Manulinsert>>() {});
+
+            // print list of users
+            list.forEach(System.out::println);
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+
+
         model.setViewName("visnofound");
         return model;
     }
@@ -145,7 +169,10 @@ public class PrivateAreaController {
         model.addAttribute("state",name);
         return "countryview";
     }
-    
-   
 
+    @RequestMapping(value = "/signout")
+    public String signout(HttpSession session) {
+        session.invalidate();
+        return "redirect:/";
+    }
 }
