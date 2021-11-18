@@ -27,7 +27,18 @@
   
   h1 {
   	color : orange !important;
+  	 font-weight: bold;
+  	 text-shadow: 1px 1px black;
   }
+  
+   p{
+      font-size:20px;
+     }
+     
+    h2{
+    	text-shadow: 1px 1px orange;
+    }
+     
    </style>
 </head>
 </head>
@@ -62,7 +73,7 @@
   </ul>
 </nav>
 
-<div class="row">
+
 
 <div id="demo" class="carousel slide" data-ride="carousel">
 
@@ -99,14 +110,14 @@
   </a>
 </div>
 
-</div>
+
 
 
 <div class="jumbotron text-center">
   <h1  >WELCOME TO DH10 WEB APPLICATION</h1>
   <h4> Are you ready to explore DH10 world? &#128187 </h4>
   <p> In this web application you can have fun playing our videogams or else you can browse some informations
-  about nations in the countries explorer section. i won't to spoil more, so jump in the site! </p> 
+  about nations in the countries explorer section.<br> i won't to spoil more, so jump in the site! </p> 
 </div>
 
 <br>
