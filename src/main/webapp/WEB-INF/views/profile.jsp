@@ -97,12 +97,12 @@
                                             style="width: 80px;"
                                     />
                                     <h5>${userName}</h5>
-                                    <p>Junior Dev</p>
+                                    <p>Normal user</p>
                                     <i class="far fa-edit mb-5"></i>
                                 </div>
                                 <div class="col-md-8">
                                     <div class="card-body p-4">
-                                        <h6>Information</h6>
+                                        <h6>Personal Information</h6>
                                         <hr class="mt-0 mb-4">
                                         <div class="row pt-1">
                                             <div class="col-6 mb-3">

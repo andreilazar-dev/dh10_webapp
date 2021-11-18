@@ -85,6 +85,9 @@ function clear(){
 
 	clearInterval(t4);
 	clearInterval(t5);
+
+	clearInterval(t7);
+	clearInterval(t8);
 	
 }
 
@@ -113,6 +116,9 @@ function mostraMatriceHTML(){
  var t3;
  var t4;
  var t5;
+
+ var t7;
+ var t8;
 
  var num_livello = 0;
 
@@ -170,12 +176,15 @@ function  cambiaLivello(num_livello){
 
 function play_game1(){
 
+
+	t8 = setInterval("generaPilloleNuove()",15000);
+
 	t2 = setInterval("disegnaCacciatoreBoo()", 500);
 
 	t3 = setInterval("generaFungo()", 10000);
 	t4 = setInterval("generaBanana()", 2000);
 
-	t5 = setInterval("decurtaEnergia()", 1000);
+	t5 = setInterval("decurtaEnergia()", 2000);
 
 
 }
@@ -215,6 +224,7 @@ function livello2(){
 
 function play_game2(){
 
+	t8 = setInterval("generaPilloleNuove()",15000);
 	
 	t1 = setInterval("disegnaCacciatoreBoo()", 500);
 
@@ -261,7 +271,8 @@ function livello3(){
 
 function play_game3(){
 
-	
+	t8 = setInterval("generaPilloleNuove()",15000);
+
 	t1 = setInterval("disegnaCacciatoreBoo()", 500);
 	t2 = setInterval("disegnaCacciatoreBowser()", 500);
 
@@ -308,6 +319,8 @@ function livello4(){
 
 function play_game4(){
 
+	t8 = setInterval("generaPilloleNuove()",15000);
+	t7 = setInterval("generaOstacolo();", 500);
 
 	t1 = setInterval("disegnaCacciatoreBowser()", 500);
 	t2 = setInterval("disegnaCacciatoreBoo()", 500);
@@ -375,6 +388,11 @@ function generaPillole(){
     countPillole ++; //vanno raccolti tutti, meglio contarli
 	generaOggetto(PILLOLA);
 }
+
+function generaPilloleNuove(){
+	generaOggetto(PILLOLA);
+}
+
 
 function generaOstacolo(){
 	generaOggetto(OSTACOLO);
@@ -483,8 +501,9 @@ function aggiornaEnergia(delta){
 }
 
 function decurtaEnergia(){
-	energia = energia -5;
+	energia = energia -10;
 	aggiornaEnergia(energia);
+	console.log("energia" + energia);
 }
 
 function resetEnergia(){
