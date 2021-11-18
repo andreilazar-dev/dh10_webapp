@@ -28,7 +28,7 @@ function checkKeyPress (event){
 
 function controllaCella(x,y){
 	if(energia<=0){
-		//game_over();
+		game_over();
 	}
 	switch (piano[x][y]){	
 		case OSTACOLO: 
