@@ -25,31 +25,22 @@ public class LoginController {
 
     @RequestMapping(method = RequestMethod.POST )
     public String submit(@ModelAttribute("loginBean") LoginBean loginBean, BindingResult result,Model model) {
-
-        LoginCheck loginCheck = new LoginCheck();
-    	//prova private area
-        if(loginBean.getUserId().equals("ADMIN")){
-            //Save id in session
-            model.addAttribute("userName",loginBean.getUserId());
-            return "redirect:reserve";
-        }
-  
-        
          
         new LoginValidator().validate(loginBean,result);
 
 
-      /*  if(result.hasErrors()){
+        if(result.hasErrors()){
         	model.addAttribute("loginBean",loginBean);
             return "login";
 
         }else {
             model.addAttribute("userName", loginBean.getUserId());
+            String user = loginBean.getUserId();
+            if(user.equals("Rei")||user.equals("Alex")||user.equals("Delga")||user.equals("Dari")){
+                return "redirect:reserve";
+            }
             return "redirect:home";
-        }*/
-
-        model.addAttribute("userName",loginBean.getUserId());
-        return "redirect:home";
+        }
          
     }
 }
