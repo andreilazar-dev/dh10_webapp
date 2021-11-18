@@ -6,7 +6,6 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -44,7 +43,7 @@
             <thead class="thead-dark">
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">Nation</th>
+                <th scope="col">Synonymous</th>
                 <th scope="col">Algorithm</th>
                 <th scope="col">Status</th>
                 <th scope="col">Country</th>
@@ -62,15 +61,48 @@
                     <c:if test="${syn.status=='1'}">
                         <td style="color:red"><c:out value="Non approvato"/></td>
                     </c:if>
-                    <td><c:out value="${syn.country.getCountry_name()}"/></td>
-
+                    <td>
+                        <label for="approved" name="${syn.synonymus_name}">
+                            <input type="text" id="approved" name="${syn.synonymus_name}">
+                        </label>
+                    </td>
                 </tr>
             </c:forEach>
             </tbody>
         </table>
+        <td>
+            <button id="submit" type="button" class="btn btn-primary float-right">confirms and approves</button>
+        </td>
     </div>
 </div>
 
+
+<script>
+    const confirm = document.querySelector('#submit');
+    confirm.onclick = () => {
+        let approvedJson = '[' ;
+        for (i = 0; i < approved.length; i++) {
+            if (approved[i].value != ""){
+                approvedJson +=
+                '{"synonimous" :'+ '"'+approved[i].name+'"'+
+                ',"country":'+'"'+$(approved[i]).val() +'"'+'}'
+                if( i != approved.length -2){
+                    approvedJson += ','
+                }
+            }
+        }
+        approvedJson += ']'
+            console.log(approvedJson)
+        fetch("fetchNoFound/mod", {
+            method: "POST",
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(approvedJson) //parse json string into JS object)
+        }).then(res => {
+            console.log("Request complete! response:", res);
+           // location.reload();
+        });
+    }
+</script>
 
 </body>
 </html>
